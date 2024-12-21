@@ -4,12 +4,12 @@ public class Chunks : MonoBehaviour
 {
     public float chunkLength;
     
-    public ShowChunk(){
+    public Chunks ShowChunk(){
         gameObject.SetActive(true);
         return this;
     }
     
-    public HideChunk(){
+    public Chunks HideChunk(){
         gameObject.SetActive(false);
         return this;
     }
