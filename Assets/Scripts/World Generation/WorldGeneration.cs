@@ -59,8 +59,9 @@ public class WorldGeneration : MonoBehaviour
     void SpawnNewChunk()
     {
         int randomIndex = Random.Range(0, chunkPrefab.Count);
-
-        Chunks newchunk = null;
+        
+        // Find inactive chunk in the pool
+        Chunks newchunk = chunkPool.Find(chunkElement => !chunkElement.gameObject.activeSelf && chunkElement.name == chunkPrefab[randomIndex].name + "(Clone)");
 
         if (!newchunk)
         {
