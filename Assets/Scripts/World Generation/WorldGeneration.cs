@@ -35,7 +35,7 @@ public class WorldGeneration : MonoBehaviour
         if (!cameraSpace)
         {
             if (Camera.main != null) cameraSpace = Camera.main.transform;
-            Debug.Log("Successfully Assigned camera position to main camera possition");
+            Debug.Log("Successfully Assigned camera position to main camera position");
         }
     }
 
