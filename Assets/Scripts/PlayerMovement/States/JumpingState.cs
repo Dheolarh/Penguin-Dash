@@ -1,18 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpingState : MonoBehaviour
+public class JumpingState : BaseState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    float jumpForce = 10.0f;
+     public override void EnterState()
+     {
+         _movement.verticalVelocity = jumpForce;
+         Debug.Log("Entered Jumping State");
+     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+     public override Vector3 StartState()
+     {
+         _movement.ApplyGravity();
+          Vector3 moveDirection = Vector3.zero;
+          moveDirection.z = _movement.baseRunSpeed;
+          moveDirection.y = _movement.verticalVelocity;
+          moveDirection.x = _movement.SnapToLane();
+          
+          return moveDirection;
+     }
+
+     public override void UpdateState()
+     {
+         if(_movement.verticalVelocity < 0)
+         {
+             _movement.ChangeState(GetComponent<FallingState>());
+         }
+     }
 }

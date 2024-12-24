@@ -6,8 +6,8 @@ public class RunningState : BaseState
 {
     public override void EnterState()
     {
-        _movement = GetComponent<PlayerMovement>();
         Debug.Log("Entered Running State");
+        _movement.verticalVelocity = 0;
     }
 
     public override void ExitState()
@@ -22,7 +22,7 @@ public class RunningState : BaseState
         Vector3 moveDirection = Vector3.zero;
         moveDirection.z = _movement.baseRunSpeed;
         moveDirection.y = -1.0f;
-        moveDirection.x = 0;
+        moveDirection.x = _movement.SnapToLane();
         return moveDirection;
     }
 
@@ -39,12 +39,17 @@ public class RunningState : BaseState
 
         if (InputManager.Instance.swipeUp && _movement.isGrounded)
         {
-           //_movement.ChangeState(GetComponent<JumpingState>());
+            _movement.ChangeState(GetComponent<JumpingState>());
         }
 
         if (InputManager.Instance.swipeDown && _movement.isGrounded)
         {
-            // _movement.ChangeState(GetComponent<SlidingState>());
+            _movement.ChangeState(GetComponent<SlidingState>());
+        }
+        
+        if (!_movement.isGrounded)
+        {
+            _movement.ChangeState(GetComponent<FallingState>());
         }
     }
 

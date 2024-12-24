@@ -9,9 +9,13 @@ public abstract class BaseState : MonoBehaviour
     public virtual void ExitState(){}
     public virtual void UpdateState(){}
 
+    private void Awake()
+    {
+        _movement = GetComponent<PlayerMovement>();
+    }
     public virtual Vector3 StartState()
     {
-        Debug.Log($"State not started in {this.ToString()}");
+        Debug.Log($"No action to do in {this.ToString()}");
         return Vector3.zero;
     }
 }

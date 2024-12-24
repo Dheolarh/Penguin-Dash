@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private CharacterController controller;
+    public CharacterController controller;
     public BaseState currentState;
     
     [HideInInspector] public Vector3 moveDirections;
@@ -42,6 +42,28 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(moveDirections * Time.deltaTime); //Move the player
     }
     
+    public float SnapToLane()
+    {
+        float xPosition = 0.0f;
+        if (transform.position.x != currentLane * distanceBetweenLanes)
+        {
+            float deltaToLane = (currentLane * distanceBetweenLanes) - transform.position.x;
+            xPosition = (deltaToLane > 0) ? 1 : -1;
+            xPosition *= baseSidewaySpeed;
+            
+            float moveDistance = xPosition * Time.deltaTime;
+            if (Mathf.Abs(moveDistance) > Mathf.Abs(deltaToLane))
+            {
+                xPosition = deltaToLane * (1/Time.deltaTime);
+            }
+        }
+        else
+        {
+            xPosition = 0.0f;
+        }
+        return xPosition;
+    }   
+    
     public void ChangeLane(int direction)
     {
         currentLane += Mathf.Clamp(direction, -1, 1);
@@ -51,5 +73,14 @@ public class PlayerMovement : MonoBehaviour
         currentState.ExitState();
         currentState = newState;
         currentState.EnterState();
+    }
+
+    public void ApplyGravity()
+    {
+        verticalVelocity -= gravity * Time.deltaTime;
+        if (verticalVelocity < -maxVelocity)
+        {
+            verticalVelocity = -maxVelocity;
+        }
     }
 }
