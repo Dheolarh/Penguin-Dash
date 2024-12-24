@@ -75,20 +75,11 @@ public class InputManager : MonoBehaviour
         }
     }
     #endregion
-
-    #region private variables
-    private bool _tap;
-    private Vector2 _touchPosition;
-    private Vector2 _startDrag;
-    private bool _swipeLeft;
-    private bool _swipeRight;
-    private bool _swipeUp;
-    private bool _swipeDown;
-    private int _swiperLeftCounter;
-    private int _swipeRightCounter;
-    private int _swipeUpCounter;
-    private int _swipeDownCounter;
     
+    #region private variables
+    private Vector2 _touchPosition, _startDrag;
+    private bool _tap, _swipeLeft, _swipeRight, _swipeUp, _swipeDown;
+    private int _swiperLeftCounter, _swipeRightCounter, _swipeUpCounter, _swipeDownCounter;
     #endregion
     private void Awake()
     {
