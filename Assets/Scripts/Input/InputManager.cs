@@ -114,7 +114,32 @@ public class InputManager : MonoBehaviour
         actionScheme.Gameplay.TouchPosition.performed += ctx => OnTouchPosition(ctx);
         actionScheme.Gameplay.StartDrag.performed += ctx => OnStartDrag(ctx);
         actionScheme.Gameplay.ReleaseDrag.performed += ctx => OnReleaseDrag(ctx);
+        actionScheme.Gameplay.KeyboardInput.performed += ctx => OnKeyboardInput(ctx);
     }
+
+    private void OnKeyboardInput(InputAction.CallbackContext ctx)
+    {
+        var key = ctx.control as UnityEngine.InputSystem.Controls.KeyControl;
+        if (key != null)
+        {
+            switch (key.keyCode)
+            {
+                case UnityEngine.InputSystem.Key.LeftArrow:
+                    _swipeLeft = true;
+                    break;
+                case UnityEngine.InputSystem.Key.RightArrow:
+                    _swipeRight = true;
+                    break;
+                case UnityEngine.InputSystem.Key.UpArrow:
+                    _swipeUp = true;
+                    break;
+                case UnityEngine.InputSystem.Key.DownArrow:
+                    _swipeDown = true;
+                    break;
+            }
+        }
+    }
+
 
     private void OnReleaseDrag(InputAction.CallbackContext ctx)
     {

@@ -62,6 +62,15 @@ public partial class @Runner: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""KeyboardInput"",
+                    ""type"": ""Value"",
+                    ""id"": ""dabc0f75-ab99-422c-b237-26b826aa4ed4"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,50 @@ public partial class @Runner: IInputActionCollection2, IDisposable
                     ""action"": ""ReleaseDrag"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c874f36-7981-4742-bfc4-ffe33b841251"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""KeyboardInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25a22ced-0ceb-4d5a-a821-91f79085c693"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""KeyboardInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa572099-d734-4c2c-b941-1a15c6152d15"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""KeyboardInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2889b4e3-ee1f-4c09-88ba-b6efd1e38250"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -192,6 +245,7 @@ public partial class @Runner: IInputActionCollection2, IDisposable
         m_Gameplay_TouchPosition = m_Gameplay.FindAction("TouchPosition", throwIfNotFound: true);
         m_Gameplay_StartDrag = m_Gameplay.FindAction("StartDrag", throwIfNotFound: true);
         m_Gameplay_ReleaseDrag = m_Gameplay.FindAction("ReleaseDrag", throwIfNotFound: true);
+        m_Gameplay_KeyboardInput = m_Gameplay.FindAction("KeyboardInput", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -257,6 +311,7 @@ public partial class @Runner: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_TouchPosition;
     private readonly InputAction m_Gameplay_StartDrag;
     private readonly InputAction m_Gameplay_ReleaseDrag;
+    private readonly InputAction m_Gameplay_KeyboardInput;
     public struct GameplayActions
     {
         private @Runner m_Wrapper;
@@ -265,6 +320,7 @@ public partial class @Runner: IInputActionCollection2, IDisposable
         public InputAction @TouchPosition => m_Wrapper.m_Gameplay_TouchPosition;
         public InputAction @StartDrag => m_Wrapper.m_Gameplay_StartDrag;
         public InputAction @ReleaseDrag => m_Wrapper.m_Gameplay_ReleaseDrag;
+        public InputAction @KeyboardInput => m_Wrapper.m_Gameplay_KeyboardInput;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -286,6 +342,9 @@ public partial class @Runner: IInputActionCollection2, IDisposable
             @ReleaseDrag.started += instance.OnReleaseDrag;
             @ReleaseDrag.performed += instance.OnReleaseDrag;
             @ReleaseDrag.canceled += instance.OnReleaseDrag;
+            @KeyboardInput.started += instance.OnKeyboardInput;
+            @KeyboardInput.performed += instance.OnKeyboardInput;
+            @KeyboardInput.canceled += instance.OnKeyboardInput;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -302,6 +361,9 @@ public partial class @Runner: IInputActionCollection2, IDisposable
             @ReleaseDrag.started -= instance.OnReleaseDrag;
             @ReleaseDrag.performed -= instance.OnReleaseDrag;
             @ReleaseDrag.canceled -= instance.OnReleaseDrag;
+            @KeyboardInput.started -= instance.OnKeyboardInput;
+            @KeyboardInput.performed -= instance.OnKeyboardInput;
+            @KeyboardInput.canceled -= instance.OnKeyboardInput;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -343,5 +405,6 @@ public partial class @Runner: IInputActionCollection2, IDisposable
         void OnTouchPosition(InputAction.CallbackContext context);
         void OnStartDrag(InputAction.CallbackContext context);
         void OnReleaseDrag(InputAction.CallbackContext context);
+        void OnKeyboardInput(InputAction.CallbackContext context);
     }
 }
