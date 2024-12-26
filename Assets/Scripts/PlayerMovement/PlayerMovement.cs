@@ -47,6 +47,19 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(moveDirections.z));
         
         controller.Move(moveDirections * Time.deltaTime); //Move the player
+        
+        if (isGrounded && Mathf.Abs(transform.position.y) > 0.1f)
+        {
+            Vector3 correctedPosition = transform.position;
+            correctedPosition.y = 0f;
+            transform.position = correctedPosition;
+        }
+
+        if (!isGrounded)
+        {
+            ApplyGravity();
+        }
+
     }
     
     public float SnapToLane()

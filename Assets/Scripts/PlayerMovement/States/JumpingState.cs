@@ -26,9 +26,7 @@ public class JumpingState : BaseState
 
      public override void UpdateState()
      {
-         if(_movement.verticalVelocity < 0)
-         {
-             _movement.ChangeState(GetComponent<FallingState>());
-         }
+         _movement.ApplyGravity();
+         if(_movement.verticalVelocity < 0) _movement.ChangeState(GetComponent<FallingState>());
      }
 }
