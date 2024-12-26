@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public Animator animator { get; set; }
     public BaseState currentState;
+    public Transform playerTransform;
     
     [HideInInspector] public Vector3 moveDirections;
     [HideInInspector] public float verticalVelocity;
@@ -13,14 +15,16 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public int currentLane;
     
     public float distanceBetweenLanes = 3.0f;
-    public float gravity = 15.0f;
+    public float gravity = 14.0f;
     public float maxVelocity = 20.0f;
-    public float baseRunSpeed = 5.0f;
+    public float baseRunSpeed = 10.0f;
     public float baseSidewaySpeed = 10.0f;
     
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
+        playerTransform = GetComponent<Transform>();
         currentState = GetComponent<RunningState>();
         currentState.EnterState();
     }
@@ -39,13 +43,16 @@ public class PlayerMovement : MonoBehaviour
         
         currentState.UpdateState(); //Update the current state (changes in current state e.g. changing lanes with swipe)
         
+        animator.SetBool("IsGrounded", isGrounded);
+        animator.SetFloat("Speed", Mathf.Abs(moveDirections.z));
+        
         controller.Move(moveDirections * Time.deltaTime); //Move the player
     }
     
     public float SnapToLane()
     {
         float xPosition = 0.0f;
-        if (transform.position.x != currentLane * distanceBetweenLanes)
+        if (transform.position.x != (currentLane * distanceBetweenLanes))
         {
             float deltaToLane = (currentLane * distanceBetweenLanes) - transform.position.x;
             xPosition = (deltaToLane > 0) ? 1 : -1;

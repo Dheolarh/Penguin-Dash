@@ -7,6 +7,7 @@ public class FallingState : BaseState
     // Start is called before the first frame update
     public override void EnterState()
     {
+        _movement.animator.SetTrigger("Fall");
         Debug.Log("Entered Falling State");
     }
     
@@ -21,10 +22,11 @@ public class FallingState : BaseState
     
     public override void UpdateState()
     {
-        if (_movement.isGrounded)
-        {
-            _movement.ChangeState(GetComponent<RunningState>());
-        }
+        if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
+
+        if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
+
+        if (_movement.isGrounded) _movement.ChangeState(GetComponent<RunningState>());
     }
     
 }

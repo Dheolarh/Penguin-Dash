@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WorldGeneration : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class WorldGeneration : MonoBehaviour
 
     [SerializeField] private List<GameObject> chunkPrefab;
     [SerializeField] private Transform cameraSpace;
+    
+    // Camera Follow Player
+    public PlayerMovement player;
+    private Vector3 cameraOffset;
 
     #region TO DELETE $$
     void Awake()
@@ -26,6 +32,7 @@ public class WorldGeneration : MonoBehaviour
 
     void Start()
     {
+        cameraOffset = new Vector3(0, 1.5f, -2);
         if (chunkPrefab.Count == 0)
         {
             Debug.LogError("Empty Chunk list");
@@ -43,6 +50,11 @@ public class WorldGeneration : MonoBehaviour
     void Update()
     {
         ScanPosition();
+    }
+
+    private void LateUpdate()
+    {
+        cameraSpace.position = player.playerTransform.position + cameraOffset;
     }
 
     void ScanPosition()

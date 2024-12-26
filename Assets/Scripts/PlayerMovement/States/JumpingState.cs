@@ -8,6 +8,7 @@ public class JumpingState : BaseState
     float jumpForce = 10.0f;
      public override void EnterState()
      {
+         _movement.animator.SetTrigger("Jump");
          _movement.verticalVelocity = jumpForce;
          Debug.Log("Entered Jumping State");
      }

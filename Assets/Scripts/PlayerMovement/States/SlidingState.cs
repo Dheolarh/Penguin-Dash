@@ -13,6 +13,7 @@ public class SlidingState : BaseState
 
    public override void EnterState()
    {
+      _movement.animator.SetTrigger("Slide");
       slideStart = Time.time;
       initalCenter = _movement.controller.center;
       initialSize = _movement.controller.height;
@@ -22,6 +23,7 @@ public class SlidingState : BaseState
 
    public override void ExitState()
    {
+      _movement.animator?.SetTrigger("Running");
       _movement.controller.height = initialSize;
       _movement.controller.center = initalCenter;
    }
