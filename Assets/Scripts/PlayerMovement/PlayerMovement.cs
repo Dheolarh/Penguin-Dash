@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public Animator animator { get; set; }
+    public Rigidbody playerRB;
+    public Animator animator;
     public BaseState currentState;
     public Transform playerTransform;
+    public CapsuleCollider playerCollider;
     
     [HideInInspector] public Vector3 moveDirections;
     [HideInInspector] public float verticalVelocity;
@@ -15,15 +17,16 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public int currentLane;
     
     public float distanceBetweenLanes = 3.0f;
-    public float gravity = 14.0f;
-    public float maxVelocity = 20.0f;
+    public float gravity= 10.0f;
+    public float maxVelocity = 10.0f;
     public float baseRunSpeed = 10.0f;
     public float baseSidewaySpeed = 10.0f;
     
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        playerRB = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        playerCollider = GetComponent<CapsuleCollider>();
         playerTransform = GetComponent<Transform>();
         currentState = GetComponent<RunningState>();
         currentState.EnterState();
@@ -35,10 +38,17 @@ public class PlayerMovement : MonoBehaviour
         Movement();
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            verticalVelocity = 0.0f;
+        }
+    }
+
     private void Movement()
     {
-        isGrounded = controller.isGrounded; //Check if the player is grounded
-
         moveDirections = currentState.StartState(); //Get the movement direction from the current state (Start the current state which is running state)
         
         currentState.UpdateState(); //Update the current state (changes in current state e.g. changing lanes with swipe)
@@ -46,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetFloat("Speed", Mathf.Abs(moveDirections.z));
         
-        controller.Move(moveDirections * Time.deltaTime); //Move the player
+        playerRB.velocity = moveDirections; //Move the player
         
         if (isGrounded && Mathf.Abs(transform.position.y) > 0.1f)
         {

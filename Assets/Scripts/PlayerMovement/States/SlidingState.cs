@@ -15,10 +15,10 @@ public class SlidingState : BaseState
    {
       _movement.animator.SetTrigger("Slide");
       slideStart = Time.time;
-      initalCenter = _movement.controller.center;
-      initialHeight = _movement.controller.height;
-      _movement.controller.height = initialHeight / 4;
-      _movement.controller.center = initalCenter / 2;
+      initalCenter = _movement.playerCollider.center;
+      initialHeight = _movement.playerCollider.height;
+      _movement.playerCollider.height = initialHeight / 4;
+      _movement.playerCollider.center = initalCenter / 2;
    }
    
    public override Vector3 StartState()
@@ -42,8 +42,8 @@ public class SlidingState : BaseState
    public override void ExitState()
    {
       _movement.animator?.SetTrigger("Running");
-      _movement.controller.height = initialHeight;
-      _movement.controller.center = initalCenter;
+      _movement.playerCollider.height = initialHeight;
+      _movement.playerCollider.center = initalCenter;
    }
 
 

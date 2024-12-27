@@ -28,8 +28,8 @@ public class RunningState : BaseState
 
     public override void UpdateState()
     {
-        if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
-        if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
+        if (InputManager.Instance.swipeLeft){ Debug.Log("Swiped Left"); _movement.ChangeLane(-1);}
+        if (InputManager.Instance.swipeRight){ Debug.Log("Swiped Right"); _movement.ChangeLane(1);}
         if (InputManager.Instance.swipeUp && _movement.isGrounded) _movement.ChangeState(GetComponent<JumpingState>());
         if (InputManager.Instance.swipeDown) _movement.ChangeState(GetComponent<SlidingState>());
         if (!_movement.isGrounded) _movement.ChangeState(GetComponent<FallingState>());

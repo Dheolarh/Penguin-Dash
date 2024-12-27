@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7013246261696593995}
   - component: {fileID: 4530754885991047888}
   - component: {fileID: 9081662275639036018}
+  - component: {fileID: 7688839579938879832}
   m_Layer: 0
   m_Name: Plane (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +99,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &7688839579938879832
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26792077894740507}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &74824503468232629
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,9 +163,10 @@ GameObject:
   - component: {fileID: 6738051049799348371}
   - component: {fileID: 7949913356978975406}
   - component: {fileID: 2358969762435666135}
+  - component: {fileID: 4858701810466104772}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +250,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &4858701810466104772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91311455263729188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &346580149573818121
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +327,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0, y: 10, z: 80}
-  m_Center: {x: 5, y: 0, z: -34.95418}
+  m_Center: {x: 4, y: 0, z: -34.95418}
 --- !u!65 &3602133304037547961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -312,7 +340,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0, y: 10, z: 80}
-  m_Center: {x: -5, y: 0, z: -34.95418}
+  m_Center: {x: -4, y: 0, z: -34.95418}
 --- !u!1 &1029711821199816578
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,9 +353,10 @@ GameObject:
   - component: {fileID: 1343529944949805877}
   - component: {fileID: 5887020969007263594}
   - component: {fileID: 4157855898476006920}
+  - component: {fileID: 7507146474948162821}
   m_Layer: 0
   m_Name: Plane (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -411,6 +440,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &7507146474948162821
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029711821199816578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1539489529477488745
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,9 +465,10 @@ GameObject:
   - component: {fileID: 3200084066203594837}
   - component: {fileID: 7384450739420251711}
   - component: {fileID: 3706211877831861864}
+  - component: {fileID: 4964240828654905215}
   m_Layer: 0
   m_Name: Plane (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -509,6 +552,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &4964240828654905215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539489529477488745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1547741312867546074
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,9 +577,10 @@ GameObject:
   - component: {fileID: 6977873431526304848}
   - component: {fileID: 7135920657322913188}
   - component: {fileID: 1025637205555135352}
+  - component: {fileID: 6876483225734532391}
   m_Layer: 0
   m_Name: Plane (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -607,6 +664,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6876483225734532391
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547741312867546074}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2017542661078703807
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,9 +722,10 @@ GameObject:
   - component: {fileID: 6420801247448532429}
   - component: {fileID: 6946264184120711956}
   - component: {fileID: 5135826078537954051}
+  - component: {fileID: 71421087212309418}
   m_Layer: 0
   m_Name: Plane (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -738,6 +809,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &71421087212309418
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089995920414375567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2773830924593548720
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,9 +882,10 @@ GameObject:
   - component: {fileID: 942017826842301262}
   - component: {fileID: 4456544626268674404}
   - component: {fileID: 7553507979535006427}
+  - component: {fileID: 7976067128001100252}
   m_Layer: 0
   m_Name: Plane (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -884,6 +969,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &7976067128001100252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571661450117976614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6721088620611625039
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,9 +994,10 @@ GameObject:
   - component: {fileID: 8634295121596885564}
   - component: {fileID: 6300157833854344413}
   - component: {fileID: 8600115870041996279}
+  - component: {fileID: 3121794779024637072}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -982,6 +1081,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &3121794779024637072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721088620611625039}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6766614420846714055
 GameObject:
   m_ObjectHideFlags: 0
