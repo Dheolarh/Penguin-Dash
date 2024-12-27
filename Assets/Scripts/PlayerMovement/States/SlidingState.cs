@@ -20,22 +20,6 @@ public class SlidingState : BaseState
       _movement.controller.height = initialHeight / 4;
       _movement.controller.center = initalCenter / 2;
    }
-
-   public override void ExitState()
-   {
-      _movement.animator?.SetTrigger("Running");
-      _movement.controller.height = initialHeight;
-      _movement.controller.center = initalCenter;
-   }
-
-   public override void UpdateState()
-   {
-      if (Time.time - slideStart > slideDuration) _movement.ChangeState(GetComponent<RunningState>());
-      if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
-      if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
-      if (!_movement.isGrounded) _movement.ChangeState(GetComponent<FallingState>());
-      if(InputManager.Instance.swipeUp) _movement.ChangeState(GetComponent<JumpingState>());
-   }
    
    public override Vector3 StartState()
    {
@@ -45,5 +29,25 @@ public class SlidingState : BaseState
       moveDirection.x = _movement.SnapToLane();
       return moveDirection;
    }
+   
+   public override void UpdateState()
+   {
+      if (Time.time - slideStart > slideDuration) _movement.ChangeState(GetComponent<RunningState>());
+      if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
+      if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
+      if (!_movement.isGrounded) _movement.ChangeState(GetComponent<FallingState>());
+      if(InputManager.Instance.swipeUp) _movement.ChangeState(GetComponent<JumpingState>());
+   }
+
+   public override void ExitState()
+   {
+      _movement.animator?.SetTrigger("Running");
+      _movement.controller.height = initialHeight;
+      _movement.controller.center = initalCenter;
+   }
+
+
+   
+
 }
  
