@@ -5,20 +5,12 @@ using UnityEngine;
 public class SlidingState : BaseState   
 {
    public float slideDuration = 2.0f;
-   
-   // Collider minimization logic
-   public Vector3 initalCenter;
-   public float initialHeight;
    public float slideStart;
 
    public override void EnterState()
    {
       _movement.animator.SetTrigger("Slide");
       slideStart = Time.time;
-      initalCenter = _movement.controller.center;
-      initialHeight = _movement.controller.height;
-      _movement.controller.height = initialHeight / 4;
-      _movement.controller.center = initalCenter / 2;
    }
    
    public override Vector3 StartState()
@@ -42,8 +34,6 @@ public class SlidingState : BaseState
    public override void ExitState()
    {
       _movement.animator?.SetTrigger("Running");
-      _movement.controller.height = initialHeight;
-      _movement.controller.center = initalCenter;
    }
 
 

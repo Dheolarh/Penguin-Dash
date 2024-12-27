@@ -47,14 +47,17 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(moveDirections.z));
         
         controller.Move(moveDirections * Time.deltaTime); //Move the player
-        
-        if (isGrounded && Mathf.Abs(transform.position.y) > 0.1f)
-        {
-            Vector3 correctedPosition = transform.position;
-            correctedPosition.y = 0f;
-            transform.position = correctedPosition;
-        }
         if (!isGrounded) ApplyGravity();
+        if (currentState == GetComponent<SlidingState>())
+        {
+            controller.height = 0.2f;
+            controller.center = new Vector3(0, 0.2f, 0);
+        }
+        else
+        {
+            controller.height = 1;
+            controller.center = new Vector3(0, 0.5f, 0);
+        }
     }
     
     public float SnapToLane()
@@ -67,10 +70,7 @@ public class PlayerMovement : MonoBehaviour
             xPosition *= baseSidewaySpeed;
             
             float moveDistance = xPosition * Time.deltaTime;
-            if (Mathf.Abs(moveDistance) > Mathf.Abs(deltaToLane))
-            {
-                xPosition = deltaToLane * (1/Time.deltaTime);
-            }
+            if (Mathf.Abs(moveDistance) > Mathf.Abs(deltaToLane)) xPosition = deltaToLane * (1/Time.deltaTime);
         }
         else
         {

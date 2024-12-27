@@ -369,7 +369,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0, y: 10, z: 40}
-  m_Center: {x: 5, y: 0, z: -15}
+  m_Center: {x: 4, y: 0, z: -15}
 --- !u!65 &4425539133695221724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -382,7 +382,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0, y: 10, z: 40}
-  m_Center: {x: -5, y: 0, z: -15}
+  m_Center: {x: -4, y: 0, z: -15}
 --- !u!1 &2663048322048301362
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +943,10 @@ PrefabInstance:
     - target: {fileID: 8757121778999343597, guid: 9f0af7f9da8deba48a7ec5fd1fc865d0, type: 3}
       propertyPath: m_Name
       value: Rock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757121778999343597, guid: 9f0af7f9da8deba48a7ec5fd1fc865d0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f0af7f9da8deba48a7ec5fd1fc865d0, type: 3}
