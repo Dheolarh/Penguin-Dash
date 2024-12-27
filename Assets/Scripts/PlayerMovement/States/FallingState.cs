@@ -23,9 +23,7 @@ public class FallingState : BaseState
     public override void UpdateState()
     {
         if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
-
         if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
-
         if (_movement.isGrounded) _movement.ChangeState(GetComponent<RunningState>());
     }
     

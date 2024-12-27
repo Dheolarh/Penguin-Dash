@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.soupday.cc3_unity_tools": "file:C:/Users/adeju/Downloads/cc_unity_tools_URP-1.6.3.URP17",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.collab-proxy": "2.5.2",

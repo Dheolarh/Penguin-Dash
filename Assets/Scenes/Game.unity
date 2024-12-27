@@ -199,13 +199,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594113978}
-  m_LocalRotation: {x: -0.12299725, y: -0.0012670961, z: 0.0008166311, w: -0.9924059}
-  m_LocalPosition: {x: 0.045384496, y: 1.2629865, z: -1.944054}
+  m_LocalRotation: {x: -0.12732622, y: -0.0012706475, z: 0.0008110946, w: -0.99185973}
+  m_LocalPosition: {x: 0.0753845, y: 1.2799032, z: -1.9029586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1993935726}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -0.308, y: 0, z: 0.006}
 --- !u!114 &594113982
 MonoBehaviour:
@@ -404,6 +404,7 @@ MonoBehaviour:
   - {fileID: 5499753250086661342, guid: 573b4ec9f979b40449f745b80f92615c, type: 3}
   - {fileID: 346580149573818121, guid: e86a23186af6fbb45b2f78a482da51a9, type: 3}
   cameraSpace: {fileID: 594113981}
+  player: {fileID: 1993935731}
 --- !u!4 &1359151775
 Transform:
   m_ObjectHideFlags: 0
@@ -417,13 +418,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1993935726 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400068, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
-  m_PrefabInstance: {fileID: 2048017536}
-  m_PrefabAsset: {fileID: 0}
 --- !u!143 &1993935727
 CharacterController:
   m_ObjectHideFlags: 0
@@ -437,7 +433,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1
   m_Radius: 0.2
-  m_SlopeLimit: 45
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -478,6 +474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a77e53a845694e489bc15b5b0822509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slideDuration: 1
+  initalCenter: {x: 0, y: 0, z: 0}
+  initialHeight: 0
+  slideStart: 0
 --- !u!114 &1993935731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,7 +490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4883a8dc768b6fa419a4173b8ed76e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   currentState: {fileID: 0}
+  playerTransform: {fileID: 0}
   moveDirections: {x: 0, y: 0, z: 0}
   verticalVelocity: 0
   isGrounded: 0
@@ -525,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
       propertyPath: m_LocalPosition.x
@@ -586,7 +588,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6758608616258312538, guid: 75aaa4b8d40e66447ad66a38982efa40, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6758608616258312538, guid: 75aaa4b8d40e66447ad66a38982efa40, type: 3}
       propertyPath: m_LocalPosition.x

@@ -17,8 +17,6 @@ public class RunningState : BaseState
         Debug.Log("Exited Running State");
     }
 
-
-
     public override Vector3 StartState()
     {
         Vector3 moveDirection = Vector3.zero;
@@ -30,29 +28,11 @@ public class RunningState : BaseState
 
     public override void UpdateState()
     {
-        if (InputManager.Instance.swipeLeft)
-        {
-           _movement.ChangeLane(-1);
-        }
-        if (InputManager.Instance.swipeRight)
-        {
-            _movement.ChangeLane(1);
-        }
-
-        if (InputManager.Instance.swipeUp && _movement.isGrounded)
-        {
-            _movement.ChangeState(GetComponent<JumpingState>());
-        }
-
-        if (InputManager.Instance.swipeDown && _movement.isGrounded)
-        {
-            _movement.ChangeState(GetComponent<SlidingState>());
-        }
-        
-        if (!_movement.isGrounded)
-        {
-            _movement.ChangeState(GetComponent<FallingState>());
-        }
+        if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
+        if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
+        if (InputManager.Instance.swipeUp && _movement.isGrounded) _movement.ChangeState(GetComponent<JumpingState>());
+        if (InputManager.Instance.swipeDown) _movement.ChangeState(GetComponent<SlidingState>());
+        if (!_movement.isGrounded) _movement.ChangeState(GetComponent<FallingState>());
     }
 
 }
