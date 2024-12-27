@@ -17,10 +17,10 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public int currentLane;
     
     public float distanceBetweenLanes = 3.0f;
-    public float gravity= 10.0f;
+    public float gravity= 20.0f;
     public float maxVelocity = 10.0f;
     public float baseRunSpeed = 10.0f;
-    public float baseSidewaySpeed = 10.0f;
+    public float baseSidewaySpeed = 20.0f;
     
     void Start()
     {
@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         playerCollider = GetComponent<CapsuleCollider>();
         playerTransform = GetComponent<Transform>();
+        
+        //States
         currentState = GetComponent<RunningState>();
         currentState.EnterState();
     }
@@ -55,15 +57,8 @@ public class PlayerMovement : MonoBehaviour
         
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetFloat("Speed", Mathf.Abs(moveDirections.z));
-        
-        playerRB.velocity = moveDirections; //Move the player
-        
-        if (isGrounded && Mathf.Abs(transform.position.y) > 0.1f)
-        {
-            Vector3 correctedPosition = transform.position;
-            correctedPosition.y = 0f;
-            transform.position = correctedPosition;
-        }
+
+        playerRB.velocity = new Vector3(moveDirections.x, moveDirections.y, moveDirections.z);        
         if (!isGrounded) ApplyGravity();
     }
     
