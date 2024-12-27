@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlidingState : BaseState   
 {
-   public float slideDuration = 1.0f;
+   public float slideDuration = 2.0f;
    
    // Collider minimization logic
    public Vector3 initalCenter;

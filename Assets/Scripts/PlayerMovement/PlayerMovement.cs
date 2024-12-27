@@ -54,12 +54,7 @@ public class PlayerMovement : MonoBehaviour
             correctedPosition.y = 0f;
             transform.position = correctedPosition;
         }
-
-        if (!isGrounded)
-        {
-            ApplyGravity();
-        }
-
+        if (!isGrounded) ApplyGravity();
     }
     
     public float SnapToLane()
