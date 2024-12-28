@@ -4,18 +4,17 @@ using UnityEngine;
 
 public abstract class FactoryState : MonoBehaviour
 {
-    protected GameManager system;
+    protected GameManager flow;
     
     private void Awake()
     {
-        system = GetComponent<GameManager>();
+        flow = GetComponent<GameManager>();
     }
-    public virtual void EnterState(){}
-    public virtual void ExitState(){}
-    public virtual void UpdateState(){}
-    public virtual Vector3 StartState()
+    public virtual void EnterFlow(){}
+    public virtual void ExitFlow(){}
+    public virtual void UpdateFlow(){}
+    public virtual void StartFlow()
     {
         Debug.Log($"No action to do in {this.ToString()}");
-        return Vector3.zero;
     }
 }

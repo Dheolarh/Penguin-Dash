@@ -8,7 +8,7 @@ public class FallingState : BaseState
     public override void EnterState()
     {
         _movement.animator.SetTrigger("Fall");
-        Debug.Log($"Player Position at Y: {_movement.transform.position.y} and isGroundaed is: {_movement.isGrounded}");
+        Debug.Log($"Entered {this.ToString()}");
     }
     
     public override Vector3 StartState()

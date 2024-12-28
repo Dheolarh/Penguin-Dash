@@ -10,7 +10,7 @@ public class JumpingState : BaseState
      {
          _movement.animator.SetTrigger("Jump");
          _movement.verticalVelocity = jumpForce;
-         Debug.Log("Entered Jumping State");
+         Debug.Log($"Entered {this.ToString()}");
      }
 
      public override Vector3 StartState()

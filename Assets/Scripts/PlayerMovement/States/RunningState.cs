@@ -6,9 +6,8 @@ public class RunningState : BaseState
 {
     public override void EnterState()
     {
-        Debug.Log("Entered Running State");
+        Debug.Log($"Entered {this.ToString()}");
         _movement.animator?.SetTrigger("Running");
-        _movement.animator?.SetFloat("Speed",1);
         _movement.verticalVelocity = 0;
     }
 

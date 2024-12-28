@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameManager Instance
+    public static GameManager Instance
     {
         get
         {
@@ -25,15 +25,26 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
-    // Start is called before the first frame update
-    void Start()
+    
+    public FactoryState currentFlow;
+    public PlayerMovement startGame;
+    
+    void Awake()
     {
-        
+        instance = this;
+        currentFlow = GetComponent<InitializeGame>();
+        currentFlow.EnterFlow();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        currentFlow.UpdateFlow();
+    }
+
+    public void ChangeState(FactoryState newFlow)
+    {
+        currentFlow.ExitFlow();
+        currentFlow = newFlow;
+        currentFlow.EnterFlow();
     }
 }

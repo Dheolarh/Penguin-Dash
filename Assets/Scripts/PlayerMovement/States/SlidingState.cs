@@ -11,6 +11,7 @@ public class SlidingState : BaseState
    {
       _movement.animator.SetTrigger("Slide");
       slideStart = Time.time;
+      Debug.Log($"Entered {this.ToString()}");
    }
    
    public override Vector3 StartState()

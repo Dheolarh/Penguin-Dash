@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public Animator animator { get; set; }
     public BaseState currentState;
+    public bool isPaused;
     public Transform playerTransform;
     
     [HideInInspector] public Vector3 moveDirections;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     
     void Start()
     {
+        isPaused = true;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         playerTransform = GetComponent<Transform>();
@@ -29,10 +32,19 @@ public class PlayerMovement : MonoBehaviour
         currentState.EnterState();
     }
 
+    public void PauseGame()
+    {
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+    }
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if (!isPaused) Movement();
     }
 
     private void Movement()
@@ -97,5 +109,19 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalVelocity = -maxVelocity;
         }
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        string hitLayerName = LayerMask.LayerToName(hit.gameObject.layer);
+        if (hitLayerName == "Death")
+        {
+            ChangeState(GetComponent<DeathState>());
+        }
+    }
+    
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
     }
 }
