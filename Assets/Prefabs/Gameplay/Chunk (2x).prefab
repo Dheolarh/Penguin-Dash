@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4327131197634140646}
   - component: {fileID: 4800702221338316505}
   - component: {fileID: 8926934853875273728}
-  - component: {fileID: 6684150059328845847}
+  - component: {fileID: 7181454180275178946}
   m_Layer: 0
   m_Name: Plane (3)
   m_TagString: Untagged
@@ -119,8 +119,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6684150059328845847
-MeshCollider:
+--- !u!65 &7181454180275178946
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -129,10 +129,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &737361224273578628
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +218,7 @@ GameObject:
   - component: {fileID: 794590853780579280}
   - component: {fileID: 5045892171035474823}
   - component: {fileID: 8491261777070258618}
-  - component: {fileID: 4267300333180361667}
+  - component: {fileID: 868364743453458357}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -292,8 +291,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4267300333180361667
-MeshCollider:
+--- !u!65 &868364743453458357
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -302,10 +301,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2255051363057540125
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +392,7 @@ GameObject:
   - component: {fileID: 4480729609856176408}
   - component: {fileID: 1627622129036417114}
   - component: {fileID: 2764104280857711216}
-  - component: {fileID: 8311308413955060175}
+  - component: {fileID: 9082096073332717473}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -467,8 +465,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8311308413955060175
-MeshCollider:
+--- !u!65 &9082096073332717473
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -477,10 +475,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5098879580156685147
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +489,7 @@ GameObject:
   - component: {fileID: 6436265637188268446}
   - component: {fileID: 7806968108507799848}
   - component: {fileID: 5542358429681244105}
-  - component: {fileID: 7844565053609079011}
+  - component: {fileID: 8740380087721557036}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -565,8 +562,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7844565053609079011
-MeshCollider:
+--- !u!65 &8740380087721557036
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -575,10 +572,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &723645096935912470
 PrefabInstance:
   m_ObjectHideFlags: 0
