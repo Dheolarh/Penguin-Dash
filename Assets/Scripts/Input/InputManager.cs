@@ -151,27 +151,15 @@ public class InputManager : MonoBehaviour
             float horizontal = Mathf.Abs(delta.x);
             float vertical = Mathf.Abs(delta.y);
 
-            if (vertical > horizontal)
+            if (horizontal > vertical)
             {
-                if (delta.y > 0)
-                {
-                    _swipeUp = true;
-                }
-                else
-                {
-                    _swipeDown = true;
-                }
+                if(delta.x > 0) _swipeRight = true;
+                else _swipeLeft = true;
             }
             else
             {
-                if (delta.x > 0)
-                {
-                    _swipeRight = true;
-                }
-                else
-                {
-                    _swipeLeft = true;
-                }
+                if(delta.y > 0) _swipeUp = true;
+                else _swipeDown = true;
             }
         }
         
