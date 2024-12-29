@@ -8,5 +8,11 @@ public class DeathState : BaseState
     {
        _movement.animator?.SetTrigger("Death");
        _movement.GameOver();
+       Invoke("ReloadScene", 2.0f);
+    }
+    
+    void ReloadScene()
+    {
+        GameManager.Instance.ReloadScene();
     }
 }

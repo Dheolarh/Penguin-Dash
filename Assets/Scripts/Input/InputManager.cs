@@ -153,13 +153,29 @@ public class InputManager : MonoBehaviour
 
             if (horizontal > vertical)
             {
-                if(delta.x > 0) _swipeRight = true;
-                else _swipeLeft = true;
+                if (delta.x > 0)
+                {
+                    _swipeRight = true;
+                    Debug.Log("Swipe Right");
+                }
+                else
+                {
+                    _swipeLeft = true;
+                    Debug.Log("Swipe Left");
+                }
             }
             else
             {
-                if(delta.y > 0) _swipeUp = true;
-                else _swipeDown = true;
+                if (delta.y > 0)
+                {
+                    _swipeUp = true;
+                    Debug.Log("Swipe Up");
+                }
+                else
+                {
+                    _swipeDown = true;
+                    Debug.Log("Swipe Down");
+                }
             }
         }
         

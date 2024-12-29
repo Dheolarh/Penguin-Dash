@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Elements/Rock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Elements/Rock.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/Runner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/Runner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/Runner.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/Runner.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/DeathState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/DeathState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +155,8 @@
       <workItem from="1735373549422" duration="13915000" />
       <workItem from="1735423537231" duration="243000" />
       <workItem from="1735491272908" duration="1229000" />
+      <workItem from="1735495433476" duration="588000" />
+      <workItem from="1735502209311" duration="3178000" />
     </task>
     <servers />
   </component>

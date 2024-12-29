@@ -9,7 +9,7 @@
                     "name": "Tap",
                     "type": "Button",
                     "id": "c6c5a5e0-e682-443d-a412-87c27cfbb2c6",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
