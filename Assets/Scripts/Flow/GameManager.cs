@@ -48,8 +48,21 @@ public class GameManager : MonoBehaviour
         currentFlow = newFlow;
         currentFlow.EnterFlow();
     }
+    
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+        ReloadScene();
+    }
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
+    
 }

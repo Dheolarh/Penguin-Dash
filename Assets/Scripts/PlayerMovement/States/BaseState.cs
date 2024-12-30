@@ -15,7 +15,7 @@ public abstract class BaseState : MonoBehaviour
     }
     public virtual Vector3 StartState()
     {
-        Debug.Log($"No action to do in {this.ToString()}");
+        // Debug.Log($"No action to do in {this.ToString()}");
         return Vector3.zero;
     }
 }

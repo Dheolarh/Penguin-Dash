@@ -119,9 +119,4 @@ public class PlayerMovement : MonoBehaviour
             ChangeState(GetComponent<DeathState>());
         }
     }
-    
-    public void GameOver()
-    {
-        Debug.Log("Game Over");
-    }
 }
