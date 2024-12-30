@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class InputManager : MonoBehaviour
 {
@@ -31,49 +32,15 @@ public class InputManager : MonoBehaviour
     private Runner actionScheme;
     
     //Configurations
-    [SerializeField] private float swipeThreshold = 50.0f;
+    [SerializeField] private float swipeThreshold;
     
     #region public variables
-    public bool tap
-    {
-        get { return _tap; }
-    }
-    public Vector2 touchPosition
-    {
-        get { return _touchPosition; }
-    }
-    public bool swipeLeft
-    {
-        get
-        {
-            _swiperLeftCounter++;
-            return _swipeLeft;
-        }
-    }
-    public bool swipeRight
-    {
-        get
-        {
-            _swipeRightCounter++;
-            return _swipeRight;
-        }
-    }
-    public bool swipeUp
-    {
-        get
-        {
-            _swipeUpCounter++;
-            return _swipeUp;
-        }
-    }
-    public bool swipeDown
-    {
-        get
-        {
-            _swipeDownCounter++;
-            return _swipeDown;
-        }
-    }
+    public bool tap { get { return _tap; } }
+    public Vector2 touchPosition { get { return _touchPosition; } }
+    public bool swipeLeft { get { return _swipeLeft; } }
+    public bool swipeRight { get { return _swipeRight; } }
+    public bool swipeUp { get { return _swipeUp; } }
+    public bool swipeDown { get { return _swipeDown; } }
     #endregion
     
     #region private variables
@@ -96,6 +63,11 @@ public class InputManager : MonoBehaviour
         Controls();
     }
 
+    private void Start()
+    {
+       swipeThreshold = Screen.dpi / 5;
+    }
+    
     private void LateUpdate()
     {
         ResetPosition();
@@ -104,7 +76,6 @@ public class InputManager : MonoBehaviour
     private void ResetPosition()
     {
         _tap = _swipeRight = _swipeLeft = _swipeUp = _swipeDown = false;
-        _touchPosition = Vector2.zero;
     }
 
     private void Controls()
@@ -119,8 +90,7 @@ public class InputManager : MonoBehaviour
 
     private void OnKeyboardInput(InputAction.CallbackContext ctx)
     {
-        var key = ctx.control as UnityEngine.InputSystem.Controls.KeyControl;
-        if (key != null)
+        if (ctx.control is KeyControl key)
         {
             switch (key.keyCode)
             {

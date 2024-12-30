@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlidingState : BaseState   
 {
-   public float slideDuration = 2.0f;
+   public float slideDuration = 3.0f;
    public float slideStart;
 
    public override void EnterState()

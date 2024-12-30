@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class JumpingState : BaseState
 {
-    float jumpForce = 10.0f;
+    float jumpForce = 15.0f;
      public override void EnterState()
      {
          _movement.animator.SetTrigger("Jump");
