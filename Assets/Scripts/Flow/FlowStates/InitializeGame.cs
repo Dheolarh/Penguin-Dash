@@ -14,4 +14,9 @@ public class InitializeGame : FactoryState
             Debug.Log("Game Start");
         }
     }
+    
+    public void RetryGame()
+    {
+        flow.ChangeState(GetComponent<GameStart>());
+    }
 }
