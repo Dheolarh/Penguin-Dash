@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class BaseState : MonoBehaviour
 {
     protected PlayerMovement _movement;
+    public float airTime;
+    public float elapsedAirTime;
     public virtual void EnterState(){}
     public virtual void ExitState(){}
     public virtual void UpdateState(){}

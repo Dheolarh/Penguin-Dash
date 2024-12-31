@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FallingState : BaseState
 {
+    
     // Start is called before the first frame update
     public override void EnterState()
     {
@@ -22,6 +23,11 @@ public class FallingState : BaseState
     
     public override void UpdateState()
     {
+        if((elapsedAirTime - airTime) <= 1.5f && _movement.jumpCount < 1 && InputManager.Instance.swipeUp )
+        {
+            _movement.jumpCount++;
+            _movement.ChangeState(GetComponent<JumpingState>());
+        }
         if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
         if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
         if (_movement.isGrounded) _movement.ChangeState(GetComponent<RunningState>());

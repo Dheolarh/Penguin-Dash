@@ -33,14 +33,16 @@ public class InputManager : MonoBehaviour
     
     //Configurations
     [SerializeField] private float swipeThreshold;
+
     
     #region public variables
     public bool tap { get { return _tap; } }
     public Vector2 touchPosition { get { return _touchPosition; } }
     public bool swipeLeft { get { return _swipeLeft; } }
     public bool swipeRight { get { return _swipeRight; } }
-    public bool swipeUp { get { return _swipeUp; } }
+    public bool swipeUp {get { return _swipeUp; } }
     public bool swipeDown { get { return _swipeDown; } }
+
     #endregion
     
     #region private variables
@@ -65,7 +67,7 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-       swipeThreshold = Screen.dpi / 5;
+       swipeThreshold = 50f;
     }
     
     private void LateUpdate()

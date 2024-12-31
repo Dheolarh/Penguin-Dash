@@ -17,10 +17,12 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public int currentLane;
     
     public float distanceBetweenLanes = 3.0f;
-    public float gravity = 16.0f;
+    public float gravity = 11.0f;
     public float maxVelocity = 20.0f;
     public float baseRunSpeed = 10.0f;
     public float baseSidewaySpeed = 10.0f;
+    public int jumpCount;
+    public int slideCount;
     
     void Start()
     {
