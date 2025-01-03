@@ -6,7 +6,6 @@ public class PostDeathState : FactoryState
 {
     public override void EnterFlow()
     {
-        Debug.Log("Post Death Menu");
     }
     
     public override void UpdateFlow()
