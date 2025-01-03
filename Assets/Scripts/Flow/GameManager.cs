@@ -1,8 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum GameCameras
+{
+    GameStart = 0,
+    GameState = 1,
+    GameShop = 2,
+    GameRespawn = 3,
+}
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -29,6 +37,7 @@ public class GameManager : MonoBehaviour
     
     public FactoryState currentFlow;
     public PlayerMovement startGame;
+    public List<GameObject> cameras;
     
     void Awake()
     {
@@ -49,6 +58,14 @@ public class GameManager : MonoBehaviour
         currentFlow.EnterFlow();
     }
     
+    public void ChangeCamera(GameCameras camera)
+    {
+        foreach (GameObject cam in cameras)
+            cam.SetActive(false);
+        
+        cameras[(int)camera].SetActive(true);
+    }
+    
     public void GameOver()
     {
         Debug.Log("Game Over");
@@ -58,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    
+
     public void QuitGame()
     {
         Application.Quit();

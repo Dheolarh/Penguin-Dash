@@ -9,7 +9,7 @@ public class JumpingState : BaseState
      public override void EnterState()
      {
          airTime = Time.time;
-         _movement.animator.SetTrigger("Jump");
+         _movement.animator?.SetTrigger("Jump");
          _movement.verticalVelocity = jumpForce;
          Debug.Log($"Entered {this.ToString()}");
      }

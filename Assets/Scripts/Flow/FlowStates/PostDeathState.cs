@@ -13,16 +13,9 @@ public class PostDeathState : FactoryState
     {
         if (InputManager.Instance.tap)
         {
-            Debug.Log("Respawn");
-            RespawnState respawn = _movement.GetComponent<RespawnState>();
-            if (respawn !)
-            {
-                _movement.ChangeState(respawn);
-            }
-            else
-            {
-                Debug.LogError("RespawnState not found");
-            }
+            GameManager.Instance.startGame.ResetGame();
         }
     }
+
+
 }

@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class InitializeGame : FactoryState
 {
+
+    public override void EnterFlow()
+    {
+        GameManager.Instance.ChangeCamera(GameCameras.GameStart);
+    }
     // Start is called before the first frame update
     public override void UpdateFlow()
     {

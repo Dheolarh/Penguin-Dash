@@ -434,6 +434,7 @@ GameObject:
   - component: {fileID: 1217961959}
   - component: {fileID: 1217961958}
   - component: {fileID: 1217961957}
+  - component: {fileID: 1217961962}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -494,6 +495,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1217961962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217961956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e393baccf5bcd4d8c65cccdb33bad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1359151773
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +655,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100068, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1679399263}
+    - targetCorrespondingSourceObject: {fileID: 100068, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1679399264}
   m_SourcePrefab: {fileID: 100100000, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
 --- !u!1 &1679399251 stripped
 GameObject:
@@ -775,6 +791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airTime: 0
   elapsedAirTime: 0
+  knockbackForce: {x: 0, y: 4, z: -3}
 --- !u!95 &1679399263
 Animator:
   serializedVersion: 5
@@ -796,6 +813,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1679399264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679399251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db62efa761074548bbd03b1da2fae58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airTime: 0
+  elapsedAirTime: 0
+  verticalHeight: 10
 --- !u!1001 &6758608615889195667
 PrefabInstance:
   m_ObjectHideFlags: 0

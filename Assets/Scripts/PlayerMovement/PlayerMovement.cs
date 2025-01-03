@@ -112,6 +112,20 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = -maxVelocity;
         }
     }
+    
+    public void Respawn()
+    {
+        ChangeState(GetComponent<RespawnState>());
+    }
+    
+    
+    public void ResetGame()
+    {
+        playerTransform.position = Vector3.zero;
+        animator?.SetTrigger("Idle");
+        ChangeState(GetComponent<RunningState>());
+        PauseGame();
+    }
 
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {

@@ -18,10 +18,6 @@ public class WorldGeneration : MonoBehaviour
 
     [SerializeField] private List<GameObject> chunkPrefab;
     [SerializeField] private Transform cameraSpace;
-    
-    // Camera Follow Player
-    public PlayerMovement player;
-    private Vector3 cameraOffset;
 
     #region TO DELETE $$
     void Awake()
@@ -32,7 +28,6 @@ public class WorldGeneration : MonoBehaviour
 
     void Start()
     {
-        cameraOffset = new Vector3(0, 1.5f, -2);
         if (chunkPrefab.Count == 0)
         {
             Debug.LogError("Empty Chunk list");
@@ -54,7 +49,6 @@ public class WorldGeneration : MonoBehaviour
 
     private void LateUpdate()
     {
-        cameraSpace.position = player.playerTransform.position + cameraOffset;
     }
 
     void ScanPosition()
