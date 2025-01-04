@@ -10,9 +10,11 @@ public class PostDeathState : FactoryState
     
     public override void UpdateFlow()
     {
-        if (InputManager.Instance.tap)
+        if (InputManager.Instance.tap) GameManager.Instance.startGame.Respawn();
+        if (InputManager.Instance.swipeDown)
         {
-            GameManager.Instance.startGame.Respawn();
+            flow.ChangeState(GetComponent<InitializeGame>());
+            GameManager.Instance.startGame.ResetGame();
         }
     }
 

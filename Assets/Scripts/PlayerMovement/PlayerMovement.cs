@@ -123,8 +123,8 @@ public class PlayerMovement : MonoBehaviour
     {
         playerTransform.position = Vector3.zero;
         animator?.SetTrigger("Idle");
-        ChangeState(GetComponent<RunningState>());
         PauseGame();
+        ChangeState(GetComponent<RunningState>());
     }
 
     public void OnControllerColliderHit(ControllerColliderHit hit)
