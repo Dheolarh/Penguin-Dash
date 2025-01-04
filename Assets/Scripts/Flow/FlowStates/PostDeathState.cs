@@ -12,7 +12,7 @@ public class PostDeathState : FactoryState
     {
         if (InputManager.Instance.tap)
         {
-            GameManager.Instance.startGame.ResetGame();
+            GameManager.Instance.startGame.Respawn();
         }
     }
 
