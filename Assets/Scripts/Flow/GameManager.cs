@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public enum GameCameras
 {
-    GameStart = 0,
-    GameState = 1,
-    GameShop = 2,
-    GameRespawn = 3,
+    MenuCam = 0,
+    ShopCam = 1,
+    PlayCam = 2,
+    RespawnCam = 3,
 }
 public class GameManager : MonoBehaviour
 {

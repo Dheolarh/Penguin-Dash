@@ -8,7 +8,7 @@ public class InitializeGame : FactoryState
 
     public override void EnterFlow()
     {
-        GameManager.Instance.ChangeCamera(GameCameras.GameStart);
+        GameManager.Instance.ChangeCamera(GameCameras.PlayCam);
     }
     // Start is called before the first frame update
     public override void UpdateFlow()
