@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 2, z: -4}
+  m_FollowOffset: {x: 0, y: 2, z: -1.5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1002,7 +1002,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFlow: {fileID: 0}
   startGame: {fileID: 1679399256}
-  cameras: []
+  cameras:
+  - {fileID: 2116654123}
+  - {fileID: 2049595700}
+  - {fileID: 1024299494}
+  - {fileID: 1877404000}
 --- !u!4 &1217961961
 Transform:
   m_ObjectHideFlags: 0
@@ -1517,7 +1521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2116654124
 Transform:
   m_ObjectHideFlags: 0

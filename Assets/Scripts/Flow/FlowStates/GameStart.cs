@@ -7,7 +7,7 @@ public class GameStart : FactoryState
     public override void EnterFlow()
     {
         GameManager.Instance.startGame.ResumeGame();
-        GameManager.Instance.ChangeCamera(GameCameras.MenuCam);
+        GameManager.Instance.ChangeCamera(GameCameras.PlayCam);
         Debug.Log("Game Start");
     }
 }
