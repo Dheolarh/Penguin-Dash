@@ -8,6 +8,7 @@ public class InitializeGame : FactoryState
 
     public override void EnterFlow()
     {
+        Debug.Log("Successfully entered Initial State");
         GameManager.Instance.ChangeCamera(GameCameras.MenuCam);
     }
     // Start is called before the first frame update
@@ -18,5 +19,10 @@ public class InitializeGame : FactoryState
             flow.ChangeState(GetComponent<GameStart>());
             Debug.Log("Game Start");
         }
+    }
+
+    public override void ExitFlow()
+    {
+        Debug.Log("Exiting Initial State");
     }
 }

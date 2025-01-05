@@ -46,6 +46,10 @@ public class GameManager : MonoBehaviour
         currentFlow.EnterFlow();
     }
     
+    void Start()
+    {
+        Debug.Log("Game Manager Started");
+    }
     void Update()
     {
         currentFlow.UpdateFlow();

@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/PostDeathState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/PostDeathState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
