@@ -1822,6 +1822,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100068, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1679399264}
+    - targetCorrespondingSourceObject: {fileID: 100068, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1679399265}
   m_SourcePrefab: {fileID: 100100000, guid: 095f379f461e4554c8999ccdc9f2e131, type: 3}
 --- !u!4 &1454824455 stripped
 Transform:
@@ -2024,6 +2027,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   isPaused: 0
   playerTransform: {fileID: 0}
+  deathDebug: 0
   moveDirections: {x: 0, y: 0, z: 0}
   verticalVelocity: 0
   isGrounded: 0
@@ -2114,6 +2118,20 @@ MonoBehaviour:
   verticalHeight: 10
   respawnTime: 1
   respawnTimer: 0
+--- !u!114 &1679399265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679399251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0368dba8145d46f3bf860a2d6dea202c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airTime: 0
+  elapsedAirTime: 0
 --- !u!1001 &1695095177
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -36,26 +36,29 @@ public class GameManager : MonoBehaviour
     }
     
     public FactoryState currentFlow;
+    public GameObject penguin;
     public PlayerMovement startGame;
+    public WorldGeneration worldManager;
     public List<GameObject> cameras;
     
     void Awake()
     {
         instance = this;
-        currentFlow = GetComponent<InitializeGame>();
-        currentFlow.EnterFlow();
+       
     }
     
     void Start()
     {
         Debug.Log("Game Manager Started");
+        currentFlow = GetComponent<InitializeGame>();
+        currentFlow.EnterFlow();
     }
     void Update()
     {
         currentFlow.UpdateFlow();
     }
 
-    public void ChangeState(FactoryState newFlow)
+    public void ChangeFlow(FactoryState newFlow)
     {
         currentFlow.ExitFlow();
         currentFlow = newFlow;
@@ -78,6 +81,11 @@ public class GameManager : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnDisable()
+    {
+        enabled = true;
     }
 
     public void QuitGame()

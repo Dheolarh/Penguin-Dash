@@ -10,6 +10,7 @@ public abstract class BaseState : MonoBehaviour
 
     public virtual void EnterState()
     {
+        Debug.Log($"Entered {this.ToString()}");
     }
     public virtual void ExitState(){}
     public virtual void UpdateState(){}

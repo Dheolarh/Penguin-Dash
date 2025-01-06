@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public BaseState currentState;
     public bool isPaused;
     public Transform playerTransform;
+
+    public bool deathDebug = false;
     
     [HideInInspector] public Vector3 moveDirections;
     [HideInInspector] public float verticalVelocity;
@@ -50,6 +52,12 @@ public class PlayerMovement : MonoBehaviour
         // Debug.Log(currentState.ToString());
         // Debug.Log(GameManager.Instance.currentFlow.ToString());
         if (!isPaused) Movement();
+       
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     private void Movement()
@@ -124,25 +132,24 @@ public class PlayerMovement : MonoBehaviour
     
     public void ResetGame()
     {
-        Debug.Log("Resetting game");
-        Debug.Log("Now in:" + GameManager.Instance.currentFlow.ToString());
-        playerTransform.position = Vector3.zero;
+        GameManager.Instance.ChangeCamera(GameCameras.MenuCam);
         animator?.SetTrigger("Idle");
         PauseGame();
-        Debug.Log("Reset game Complete, Now changing state to running");
-        ChangeState(GetComponent<RunningState>());
-        Debug.Log("Now in:" + GameManager.Instance.currentFlow.ToString());
-        Debug.Log("Changed state to running");
-        Debug.Log("Now in:" + currentState.ToString());
     }
 
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        deathDebug = true;
         string hitLayerName = LayerMask.LayerToName(hit.gameObject.layer);
-        if (hitLayerName == "Death")
+        if (hitLayerName == "Death" && deathDebug == true)
         {
-            Debug.Log("Hit Death");
+            Debug.Log($"Death Bug in {this.ToString()} == {deathDebug.ToString()}");
             ChangeState(GetComponent<DeathState>());
         }
+    }
+    
+    private void OnDisable()
+    {
+        enabled = true;
     }
 }

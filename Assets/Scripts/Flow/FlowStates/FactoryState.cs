@@ -10,7 +10,12 @@ public abstract class FactoryState : MonoBehaviour
     {
         flow = GetComponent<GameManager>();
     }
-    public virtual void EnterFlow(){}
+
+    public virtual void EnterFlow()
+    {
+        Debug.Log($"Entered {this.ToString()}");
+
+    }
     public virtual void ExitFlow(){}
     public virtual void UpdateFlow(){}
     public virtual void StartFlow()

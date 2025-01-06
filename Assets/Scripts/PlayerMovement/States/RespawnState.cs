@@ -11,6 +11,7 @@ public class RespawnState : BaseState
     // Start is called before the first frame update
     public override void EnterState()
     {
+        _movement.ResumeGame();
         GameManager.Instance.ChangeCamera(GameCameras.RespawnCam);
         respawnTimer = Time.time;
         _movement.jumpCount = 0;

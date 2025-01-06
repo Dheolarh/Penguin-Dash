@@ -8,17 +8,33 @@ public class InitializeGame : FactoryState
 
     public override void EnterFlow()
     {
+        flow.enabled = true;
         Debug.Log("Successfully entered Initial State");
-        GameManager.Instance.ChangeCamera(GameCameras.MenuCam);
+        GameManager.Instance.penguin.transform.position = new Vector3(0, 0, 0);
+        GameManager.Instance.worldManager.ResetWorld();
+        Invoke("CallResetGame", 0.1f);
+        Invoke("StartRunningState", 1f);
     }
-    // Start is called before the first frame update
+
     public override void UpdateFlow()
     {
-        if (InputManager.Instance.tap)
+        flow.enabled = true;
+        // flow.penguin.transform.position = new Vector3(0, 0, 0);
+        if (InputManager.Instance.tap && (GameManager.Instance.startGame.isPaused == true))
         {
-            flow.ChangeState(GetComponent<GameStart>());
+            flow.ChangeFlow(GetComponent<GameStart>());
             Debug.Log("Game Start");
         }
+    }
+
+    public void CallResetGame()
+    {
+        GameManager.Instance.startGame.ResetGame();
+    }
+
+    private void StartRunningState()
+    {
+        GameManager.Instance.startGame.ChangeState(GameManager.Instance.startGame.GetComponent<RunningState>());
     }
 
     public override void ExitFlow()

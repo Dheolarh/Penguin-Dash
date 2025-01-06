@@ -10,5 +10,10 @@ public class GameStart : FactoryState
         GameManager.Instance.ChangeCamera(GameCameras.PlayCam);
         Debug.Log("Game Start");
     }
+    
+    public override void UpdateFlow()
+    {
+        GameManager.Instance.worldManager.ScanPosition();
+    }
 }
     

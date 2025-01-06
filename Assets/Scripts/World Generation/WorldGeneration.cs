@@ -42,16 +42,7 @@ public class WorldGeneration : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        ScanPosition();
-    }
-
-    private void LateUpdate()
-    {
-    }
-
-    void ScanPosition()
+    public void ScanPosition()
     {
         float cameraZPos = cameraSpace.position.z;
         Chunks lastChunk = activeChunks.Peek(); //Peek returns the last element in a Queue
@@ -89,7 +80,7 @@ public class WorldGeneration : MonoBehaviour
         chunkPool.Add(oldChunk);
     }
 
-    void ResetWorld()
+    public void ResetWorld()
     { 
          chunkSpawnZPos = firstChunkSpawnPos;
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,9 @@ public class DeathState : BaseState
     [SerializeField] private Vector3 knockbackForce = new Vector3(0, 4, -3);
     private Vector3 currentKnockback;
     public override void EnterState()
-    {
+    { 
+        _movement.deathDebug = false;
+        Debug.Log($"Death Bug in {this.ToString()} == {_movement.deathDebug.ToString()}");
        _movement.animator?.SetTrigger("Death");
        currentKnockback = knockbackForce;
     }
@@ -24,13 +27,24 @@ public class DeathState : BaseState
         if (currentKnockback.z > 0)
         {
             currentKnockback.z = 0;
-            Invoke("PostDeathAction", 1.0f);
+            Debug.Log(currentKnockback.z.ToString());
         }
+        
+        Debug.Log(currentKnockback.z.ToString());
 
         return currentKnockback;
     }
+
+    public override void UpdateState()
+    {
+        if (currentKnockback.z >= 0)
+        {
+            Invoke("PostDeathAction", 0.1f);
+        }
+    }
+
     void PostDeathAction()
     {
-        GameManager.Instance.ChangeState(GameManager.Instance.GetComponent<PostDeathState>());
+        _movement.ChangeState(_movement.GetComponent<GameResetState>());
     }
 }
