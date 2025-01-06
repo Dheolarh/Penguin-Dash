@@ -27,11 +27,7 @@ public class DeathState : BaseState
         if (currentKnockback.z > 0)
         {
             currentKnockback.z = 0;
-            Debug.Log(currentKnockback.z.ToString());
         }
-        
-        Debug.Log(currentKnockback.z.ToString());
-
         return currentKnockback;
     }
 
