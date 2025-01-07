@@ -2,30 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;      
+using UnityEngine.UI;
 
 public class InitializeGame : FactoryState
 {
+    public GameObject MenuCanvas;
+    [SerializeField] private TextMeshProUGUI highScoreText;
+    [SerializeField] private TextMeshProUGUI fishCountText;
 
     public override void EnterFlow()
     {
         flow.enabled = true;
-        Debug.Log("Successfully entered Initial State");
         GameManager.Instance.penguin.transform.position = new Vector3(0, 0, 0);
         GameManager.Instance.worldManager.ResetWorld();
         Invoke("CallResetGame", 0.1f);
         Invoke("StartRunningState", 1f);
+        highScoreText.text = "High Score: ";
+        fishCountText.text = "Fish Count: ";
+        MenuCanvas.SetActive(true);
     }
 
     public override void UpdateFlow()
     {
         flow.enabled = true;
-        // flow.penguin.transform.position = new Vector3(0, 0, 0);
-        if (InputManager.Instance.tap && (GameManager.Instance.startGame.isPaused == true))
-        {
-            flow.ChangeFlow(GetComponent<GameStart>());
-            Debug.Log("Game Start");
-        }
     }
+    
+    public void OnPlayClick()
+    {
+        flow.ChangeFlow(GetComponent<GameStart>());
+    }
+    
+    public void OnShopClick()
+    {
+        //flow.ChangeFlow(GetComponent<ShopState>());
+        Debug.Log("Shop Clicked");
+    }
+        
 
     public void CallResetGame()
     {
@@ -40,5 +53,6 @@ public class InitializeGame : FactoryState
     public override void ExitFlow()
     {
         Debug.Log("Exiting Initial State");
+        MenuCanvas.SetActive(false);
     }
 }
