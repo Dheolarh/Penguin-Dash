@@ -1462,7 +1462,6 @@ GameObject:
   - component: {fileID: 1217961959}
   - component: {fileID: 1217961958}
   - component: {fileID: 1217961957}
-  - component: {fileID: 1217961962}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1507,7 +1506,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentFlow: {fileID: 0}
+  penguin: {fileID: 1679399251}
   startGame: {fileID: 1679399256}
+  worldManager: {fileID: 1359151774}
   cameras:
   - {fileID: 2116654123}
   - {fileID: 2049595700}
@@ -1528,18 +1529,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1217961962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217961956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e393baccf5bcd4d8c65cccdb33bad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1281509899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1997,6 +1986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airTime: 0
   elapsedAirTime: 0
+  jumpForce: 10
 --- !u!114 &1679399255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,7 +2023,7 @@ MonoBehaviour:
   isGrounded: 0
   currentLane: 0
   distanceBetweenLanes: 3
-  gravity: 14
+  gravity: 16
   maxVelocity: 20
   baseRunSpeed: 10
   baseSidewaySpeed: 10

@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/DeathState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/DeathState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Chunk (2x).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Chunk (2x).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Chunk (4x) .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Chunk (4x) .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/JumpingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/JumpingState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +171,8 @@
       <workItem from="1736116324494" duration="1085000" />
       <workItem from="1736163605332" duration="6568000" />
       <workItem from="1736171074217" duration="2419000" />
-      <workItem from="1736173604988" duration="1114000" />
+      <workItem from="1736173604988" duration="1220000" />
+      <workItem from="1736249380151" duration="1275000" />
     </task>
     <servers />
   </component>

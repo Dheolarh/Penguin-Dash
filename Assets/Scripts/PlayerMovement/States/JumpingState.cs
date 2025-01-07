@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class JumpingState : BaseState
 {
-    float jumpForce = 12.0f;
+    [SerializeField] float jumpForce = 11f;
      public override void EnterState()
      {
          airTime = Time.time;
