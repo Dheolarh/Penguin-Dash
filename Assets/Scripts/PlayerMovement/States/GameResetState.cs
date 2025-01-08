@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameResetState : BaseState
 {
@@ -9,12 +10,15 @@ public class GameResetState : BaseState
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI highScoreText;
     [SerializeField] private TextMeshProUGUI fishCountText;
+    [SerializeField] private Image countdownCircle;
     private float reviveCountDown;
+    private float deathTime;
     private float counter = 5f;
 
     public override void EnterState()
     {
         PostDeathCanvas.SetActive(true);
+        deathTime = Time.time;
         reviveCountDown = Time.time + counter;
         //highScoreText.text = GameManager.Instance.GetComponent<InitializeGame>().highScoreText.text;
         //fishCountText.text = "Fish Count: ";
@@ -24,6 +28,9 @@ public class GameResetState : BaseState
     
     public override void UpdateState()
     {
+        float circleCounter = (Time.time - deathTime) / counter;
+        countdownCircle.color = Color.Lerp(Color.green, Color.red, circleCounter);
+        countdownCircle.fillAmount = 1 - circleCounter;
         if (Time.time >= reviveCountDown)
         {
             PostDeathCanvas.SetActive(false);
