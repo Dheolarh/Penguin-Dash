@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class InitializeGame : FactoryState
 {
     public GameObject MenuCanvas;
-    [SerializeField] private TextMeshProUGUI highScoreText;
-    [SerializeField] private TextMeshProUGUI fishCountText;
+    [SerializeField] public TextMeshProUGUI highScoreText;
+    [SerializeField] private TextMeshProUGUI totalFishCountText;
 
     public override void EnterFlow()
     {
@@ -19,7 +19,7 @@ public class InitializeGame : FactoryState
         Invoke("CallResetGame", 0.1f);
         Invoke("StartRunningState", 1f);
         highScoreText.text = "High Score: ";
-        fishCountText.text = "Fish Count: ";
+        totalFishCountText.text = "Fish Count: ";
         MenuCanvas.SetActive(true);
     }
 
