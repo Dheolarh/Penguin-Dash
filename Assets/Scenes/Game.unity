@@ -2988,7 +2988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x 2000
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3021,7 +3021,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3232,7 +3232,7 @@ GameObject:
   - component: {fileID: 1217961957}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3265,8 +3265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameplayCanvas: {fileID: 358180264}
-  scoreText: {fileID: 1551041680}
-  fishCountText: {fileID: 1960472919}
+  scoreText: {fileID: 1960472919}
+  fishCountText: {fileID: 1551041680}
 --- !u!114 &1217961959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3288,6 +3288,8 @@ MonoBehaviour:
   - {fileID: 2049595700}
   - {fileID: 1024299494}
   - {fileID: 1877404000}
+  collectedFish: 0
+  score: 0
 --- !u!4 &1217961961
 Transform:
   m_ObjectHideFlags: 0
@@ -6100,63 +6102,6 @@ PrefabInstance:
       addedObject: {fileID: 923153498}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75aaa4b8d40e66447ad66a38982efa40, type: 3}
---- !u!1001 &9094526906051336820
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.097
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.006
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264404190806720958, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456491017390978046, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
-      propertyPath: m_Name
-      value: fishCollectable
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4542356264ba14b4ca97eb874aa9d003, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6173,4 +6118,3 @@ SceneRoots:
   - {fileID: 358180268}
   - {fileID: 432578790}
   - {fileID: 1754937443}
-  - {fileID: 9094526906051336820}
