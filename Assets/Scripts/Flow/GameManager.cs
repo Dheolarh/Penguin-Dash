@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     public PlayerMovement startGame;
     public WorldGeneration worldManager;
     public List<GameObject> cameras;
+    public int collectedFish;
+    public int score;
+
     
     void Awake()
     {

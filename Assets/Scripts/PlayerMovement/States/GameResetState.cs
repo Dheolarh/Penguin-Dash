@@ -17,12 +17,13 @@ public class GameResetState : BaseState
 
     public override void EnterState()
     {
+        GameManager.Instance.GetComponent<GameStart>().GameplayCanvas.SetActive(false);
         PostDeathCanvas.SetActive(true);
         deathTime = Time.time;
         reviveCountDown = Time.time + counter;
-        //highScoreText.text = GameManager.Instance.GetComponent<InitializeGame>().highScoreText.text;
-        //fishCountText.text = "Fish Count: ";
-        Debug.Log($"isPaused in {this.ToString()} == {_movement.isPaused.ToString()}");
+        highScoreText.text = "TBD";
+        fishCountText.text = $"x{GameManager.Instance.collectedFish.ToString()}";
+        scoreText.text = GameManager.Instance.score.ToString();
         Debug.Log("Entered Game Reset State");
     }
     

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class GameStart : FactoryState
 {
@@ -18,9 +20,11 @@ public class GameStart : FactoryState
     
     public override void UpdateFlow()
     {
+        GameManager.Instance.score = Convert.ToInt32(Math.Floor((GameManager.Instance.startGame.playerTransform.position.z)));
+        int fishes = GameManager.Instance.collectedFish; 
         GameManager.Instance.worldManager.ScanPosition();
-        scoreText.text = "10000";
-        fishCountText.text = "100";
+        scoreText.text = $"{GameManager.Instance.score:D8}";
+        fishCountText.text = $"{fishes:D5}";
     }
     
     public override void ExitFlow()
