@@ -13,7 +13,7 @@ public class GameResetState : BaseState
     [SerializeField] private Image countdownCircle;
     private float reviveCountDown;
     private float deathTime;
-    private float counter = 5f;
+    private float counter = 3f;
 
     public override void EnterState()
     {
@@ -21,9 +21,9 @@ public class GameResetState : BaseState
         PostDeathCanvas.SetActive(true);
         deathTime = Time.time;
         reviveCountDown = Time.time + counter;
-        highScoreText.text = "TBD";
-        fishCountText.text = $"x{GameManager.Instance.collectedFish.ToString()}";
-        scoreText.text = GameManager.Instance.score.ToString();
+        highScoreText.text = GameStats.Instance.highscore.ToString();
+        fishCountText.text = $"x{GameStats.Instance.currentCollectedFish.ToString()}";
+        scoreText.text = GameStats.Instance.currentScore.ToString();
         Debug.Log("Entered Game Reset State");
     }
     
