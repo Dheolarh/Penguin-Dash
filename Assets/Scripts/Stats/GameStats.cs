@@ -30,15 +30,22 @@ public class GameStats : MonoBehaviour
     }
     
     //Score
-    public int currentScore;
-    public int highscore;
-    
+    public float currentScore;
+    public float highscore;
+    public float distanceModifier;
+
     //Fish
     public int currentCollectedFish;
     public int totalCollectedFish;
+    public float pointsPerFish;
 
+    //Internal Cooldown
+    private float lastScoreChange;
+    private float scoreUpdateDelta = 0.2f;
+    
+    // Events
     public Action<int> OnScoreChange;
-    public Action<int> OnfishCollected;
+    public Action<int> OnFishCollected;
     void Start()
     {
         
@@ -47,7 +54,19 @@ public class GameStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       currentScore = Convert.ToInt32(Math.Floor((GameManager.Instance.startGame.playerTransform.position.z)));
-        
+        float s = GameManager.Instance.startGame.playerTransform.position.z * distanceModifier;
+        s += currentCollectedFish * pointsPerFish;
+
+        if (s > currentScore)
+        {
+            currentScore = s;
+            OnScoreChange?.Invoke((int)currentScore);
+        }
+    }
+
+    public void CollectFish()
+    {
+        currentCollectedFish++;
+        OnFishCollected?.Invoke(currentCollectedFish);
     }
 }
