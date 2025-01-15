@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,10 +29,16 @@ public class GameStats : MonoBehaviour
         }
     }
     
+    //Score
     public int currentScore;
     public int highscore;
+    
+    //Fish
     public int currentCollectedFish;
     public int totalCollectedFish;
+
+    public Action<int> OnScoreChange;
+    public Action<int> OnfishCollected;
     void Start()
     {
         
@@ -40,6 +47,7 @@ public class GameStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       currentScore = Convert.ToInt32(Math.Floor((GameManager.Instance.startGame.playerTransform.position.z)));
         
     }
 }

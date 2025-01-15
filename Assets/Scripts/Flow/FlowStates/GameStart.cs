@@ -23,7 +23,6 @@ public class GameStart : FactoryState
     
     public override void UpdateFlow()
     {
-        GameStats.Instance.currentScore = Convert.ToInt32(Math.Floor((GameManager.Instance.startGame.playerTransform.position.z)));
         int fishes = GameStats.Instance.currentCollectedFish; 
         GameManager.Instance.worldManager.ScanPosition();
         scoreText.text = $"{GameStats.Instance.currentScore:D8}";
