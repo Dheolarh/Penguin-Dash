@@ -6,7 +6,7 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
 
-    public Animator anims;
+    private Animator anims;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +27,12 @@ public class Fish : MonoBehaviour
 
     private void PickUpFish()
     {
-        anims.SetTrigger("Pickup");
+        anims?.SetTrigger("Pickup");
         GameManager.Instance.collectedFish ++;
-        Debug.Log("Collected fish = " + GameManager.Instance.collectedFish);
+    }
+
+    public void FishInChunk()
+    {
+        anims?.SetTrigger("Idle");
     }
 }

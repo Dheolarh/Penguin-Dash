@@ -12,7 +12,10 @@ public class GameStart : FactoryState
     [SerializeField] private TextMeshProUGUI fishCountText;
     public override void EnterFlow()
     {
-        GameManager.Instance.startGame.ResumeGame();
+        if (GameManager.Instance.startGame.isPaused == true)
+        {
+            GameManager.Instance.startGame.ResumeGame();
+        }
         GameManager.Instance.ChangeCamera(GameCameras.PlayCam);
         Debug.Log("Game Start");
         GameplayCanvas.SetActive(true);

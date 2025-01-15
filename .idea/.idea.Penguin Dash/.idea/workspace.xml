@@ -5,7 +5,113 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Fish.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Fish.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Fish.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Fish.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/PenguinAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/PenguinAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Pickup.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Pickup.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Arch.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Arch.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear/Bear 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear/Bear 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear/Bear.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear/Bear.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear/Bear.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear/Bear.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear/Idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Bear/Idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Cabin.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Cabin.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Cross.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Cross.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Diamond3.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Diamond3.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Firewood.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Firewood.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Firewood2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Firewood2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/FishingGround.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/FishingGround.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Gift.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Gift.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Glazier1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Glazier1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Glazier2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Glazier2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Glazier3.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Glazier3.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Heart.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Heart.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/IceCube.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/IceCube.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Iceberg.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Iceberg.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Igloo.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Igloo.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Log.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Log.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Materials/AtlasTexture.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Materials/AtlasTexture.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Materials/Texture_Pbr.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Materials/Texture_Pbr.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Pine.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Pine.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Pine2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Pine2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/SeaLion.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/SeaLion.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Seal.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Seal.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Sign2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Sign2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Snowman.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Snowman.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Spike1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Spike1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Spike2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Spike2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Spike3.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Spike3.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Star.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Star.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree3.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree3.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree4.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree4.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree5.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree5.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree6.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Tree6.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/TreeDead1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/TreeDead1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/TreeDead2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/TreeDead2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Turtle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/Turtle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/textures/Bear.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/textures/Bear/Bear.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/textures/Bear/Bear/Bear.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Environement/textures/Bear/Bear/Bear/Texture_Pbr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Models/Gameplay/Materials/AtlasTexture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Artwork/Models/Gameplay/Materials/AtlasTexture.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/fishCollectable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/fishCollectable.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Elements/Rock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Elements/Rock.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Chunk (2x).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Chunk (2x).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Chunk 3 (2x).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gameplay/Chunk 3 (2x).prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/GameStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/GameStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/Fish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/Fish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/RespawnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/RespawnState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World Generation/Chunks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World Generation/Chunks.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +134,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/IntelliJEasyCodeDiff/copy_SlidingState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Objects/Fish.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -171,6 +277,10 @@
       <workItem from="1736249380151" duration="4268000" />
       <workItem from="1736317505053" duration="1483000" />
       <workItem from="1736357166558" duration="1464000" />
+      <workItem from="1736527357114" duration="10257000" />
+      <workItem from="1736846446791" duration="4339000" />
+      <workItem from="1736854213184" duration="1324000" />
+      <workItem from="1736871058189" duration="122000" />
     </task>
     <servers />
   </component>
