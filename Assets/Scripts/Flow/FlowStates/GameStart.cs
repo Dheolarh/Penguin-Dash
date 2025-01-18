@@ -25,12 +25,12 @@ public class GameStart : FactoryState
 
     private void CollectedFish(int collectedFish)
     {
-        fishCountText.text = GameStats.Instance.CurrentScoreToText();
+        fishCountText.text = GameStats.Instance.FishToText();
     }
 
     private void Score(int currentScore)
     {
-        scoreText.text = GameStats.Instance.FishToText();
+        scoreText.text = GameStats.Instance.CurrentScoreToText();
     }
 
     public override void UpdateFlow()

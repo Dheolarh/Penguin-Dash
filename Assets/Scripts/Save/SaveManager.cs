@@ -9,7 +9,7 @@ public class SaveManager: MonoBehaviour
     private static SaveManager instance;
 
     private const string SaveFile = "data.pd";
-    public SaveState saveProperties;
+    public SaveState saveData;
     private BinaryFormatter formatter;
 
     public Action<SaveState> OnLoad;
@@ -17,19 +17,19 @@ public class SaveManager: MonoBehaviour
 
     private void Awake()
     {
-        Load();
         instance = this;
         formatter = new BinaryFormatter();
+        Load();
     }
 
     public void Load()
     {
         try
         {
-            FileStream saveData = new FileStream(Application.persistentDataPath + SaveFile, FileMode.Open, FileAccess.Read);
-            saveProperties = (SaveState)formatter.Deserialize(saveData);
-            saveData.Close();
-            OnLoad?.Invoke(saveProperties);
+            FileStream saveDataFile = new FileStream(Application.persistentDataPath + SaveFile, FileMode.Open, FileAccess.Read);
+            saveData = (SaveState)formatter.Deserialize(saveDataFile);
+            saveDataFile.Close();
+            OnLoad?.Invoke(saveData);
         }
         catch
         {
@@ -40,11 +40,11 @@ public class SaveManager: MonoBehaviour
 
     public  void Save()
     {
-        if (saveProperties == null) saveProperties = new SaveState();
-        saveProperties.LastSave = DateTime.Now;
-        FileStream saveData = new FileStream(Application.persistentDataPath + SaveFile, FileMode.OpenOrCreate, FileAccess.Write);
-        formatter.Serialize(saveData, saveProperties);
-        saveData.Close();
-        OnSave?.Invoke(saveProperties); 
+        if (saveData == null) saveData = new SaveState();
+        saveData.LastSave = DateTime.Now;
+        FileStream saveDataFile = new FileStream(Application.persistentDataPath + SaveFile, FileMode.OpenOrCreate, FileAccess.Write);
+        formatter.Serialize(saveDataFile, saveData);
+        saveDataFile.Close();
+        OnSave?.Invoke(saveData); 
     }
 }
