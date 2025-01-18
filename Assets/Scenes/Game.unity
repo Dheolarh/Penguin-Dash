@@ -3317,9 +3317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6630189d42608954abfea6328f2ef711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1454824455}
   currentScore: 0
   highscore: 0
-  distanceModifier: 0
   currentCollectedFish: 0
   totalCollectedFish: 0
   pointsPerFish: 0
