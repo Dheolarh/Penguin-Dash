@@ -31,6 +31,7 @@ public class InitializeGame : FactoryState
     public void OnPlayClick()
     {
         flow.ChangeFlow(GetComponent<GameStart>());
+        GameStats.Instance.ResetSession();
     }
     
     public void OnShopClick()

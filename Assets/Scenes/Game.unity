@@ -3228,6 +3228,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1217961961}
   - component: {fileID: 1217961959}
+  - component: {fileID: 1217961963}
+  - component: {fileID: 1217961962}
   - component: {fileID: 1217961958}
   - component: {fileID: 1217961957}
   m_Layer: 0
@@ -3288,8 +3290,6 @@ MonoBehaviour:
   - {fileID: 2049595700}
   - {fileID: 1024299494}
   - {fileID: 1877404000}
-  collectedFish: 0
-  score: 0
 --- !u!4 &1217961961
 Transform:
   m_ObjectHideFlags: 0
@@ -3305,6 +3305,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1217961962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217961956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6630189d42608954abfea6328f2ef711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: 0
+  highscore: 0
+  distanceModifier: 0
+  currentCollectedFish: 0
+  totalCollectedFish: 0
+  pointsPerFish: 0
+--- !u!114 &1217961963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217961956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c78a41b77d574954b999e123fc308297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1276855700
 GameObject:
   m_ObjectHideFlags: 0

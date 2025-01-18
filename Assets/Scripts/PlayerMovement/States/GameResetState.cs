@@ -21,9 +21,9 @@ public class GameResetState : BaseState
         PostDeathCanvas.SetActive(true);
         deathTime = Time.time;
         reviveCountDown = Time.time + counter;
-        highScoreText.text = GameStats.Instance.highscore.ToString();
-        fishCountText.text = $"x{GameStats.Instance.currentCollectedFish.ToString()}";
-        scoreText.text = GameStats.Instance.currentScore.ToString();
+        //highScoreText.text =
+        fishCountText.text = GameStats.Instance.FishToText();
+        scoreText.text = GameStats.Instance.CurrentScoreToText();
         Debug.Log("Entered Game Reset State");
     }
     

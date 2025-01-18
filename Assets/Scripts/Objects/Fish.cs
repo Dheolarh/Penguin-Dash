@@ -28,7 +28,7 @@ public class Fish : MonoBehaviour
     private void PickUpFish()
     {
         anims?.SetTrigger("Pickup");
-        GameStats.Instance.currentCollectedFish ++;
+        GameStats.Instance.CollectFish();
     }
 
     public void FishInChunk()

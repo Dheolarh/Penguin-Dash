@@ -1,34 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameStats : MonoBehaviour
 {
-    public static GameStats instance;
+    private static GameStats instance;
 
-    public static GameStats Instance
+    public static GameStats Instance { get{ return instance; } }
+
+    private void Awake()
     {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<GameStats>();
-                if (instance == null)
-                {
-                    GameObject go = new GameObject
-                    {
-                        name = nameof(GameStats)
-                    };
-                    instance = go.AddComponent<GameStats>();
-                    DontDestroyOnLoad(go);
-                }
-            }
-
-            return instance;
-        }
+        instance = this;
     }
-    
+
     //Score
     public float currentScore;
     public float highscore;
@@ -60,7 +46,11 @@ public class GameStats : MonoBehaviour
         if (s > currentScore)
         {
             currentScore = s;
-            OnScoreChange?.Invoke((int)currentScore);
+            if (Time.time - lastScoreChange > scoreUpdateDelta)
+            {
+                lastScoreChange = Time.time;
+                OnScoreChange?.Invoke((int)currentScore);
+            }
         }
     }
 
@@ -68,5 +58,25 @@ public class GameStats : MonoBehaviour
     {
         currentCollectedFish++;
         OnFishCollected?.Invoke(currentCollectedFish);
+    }
+
+    public string CurrentScoreToText()
+    {
+        return currentScore.ToString("0000000");
+    }
+
+    public string FishToText()
+    {
+        return currentCollectedFish.ToString("0000");
+    }
+    
+
+    public void ResetSession()
+    {
+        currentScore = 0;
+        currentCollectedFish = 0;
+        
+        OnFishCollected?.Invoke(currentCollectedFish);
+        OnScoreChange?.Invoke((int)currentScore);
     }
 }

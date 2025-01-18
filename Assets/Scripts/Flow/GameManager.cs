@@ -13,7 +13,7 @@ public enum GameCameras
 }
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    private static GameManager instance;
     public static GameManager Instance
     {
         get

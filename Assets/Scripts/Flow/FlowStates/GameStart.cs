@@ -18,21 +18,32 @@ public class GameStart : FactoryState
         }
         GameManager.Instance.ChangeCamera(GameCameras.PlayCam);
         Debug.Log("Game Start");
+        GameStats.Instance.OnFishCollected += CollectedFish;
+        GameStats.Instance.OnScoreChange += Score;
         GameplayCanvas.SetActive(true);
     }
-    
+
+    private void CollectedFish(int collectedFish)
+    {
+        fishCountText.text = GameStats.Instance.CurrentScoreToText();
+    }
+
+    private void Score(int currentScore)
+    {
+        scoreText.text = GameStats.Instance.FishToText();
+    }
+
     public override void UpdateFlow()
     {
-        int fishes = GameStats.Instance.currentCollectedFish; 
         GameManager.Instance.worldManager.ScanPosition();
-        scoreText.text = $"{GameStats.Instance.currentScore:D8}";
-        fishCountText.text = $"{fishes:D5}";
     }
-    
+
     public override void ExitFlow()
     {
         Debug.Log("Exiting Game Start");
         GameplayCanvas.SetActive(false);
+        GameStats.Instance.OnFishCollected -= CollectedFish;
+        GameStats.Instance.OnScoreChange -= Score;
     }
 }
     
