@@ -23,7 +23,7 @@ public class GameStats : MonoBehaviour
 
     //Fish
     public int currentCollectedFish;
-    public int totalCollectedFish;
+    public int totalCollectedFish = 0;
     public float pointsPerFish = 1.5f;
 
     //Internal Cooldown
@@ -42,8 +42,8 @@ public class GameStats : MonoBehaviour
     void Update()
     {
         OnScoreChange?.Invoke(currentScore);
-        int s = Convert.ToInt32(Math.Floor(playerTransform.position.z * distanceModifier));
-        s += Convert.ToInt32(currentCollectedFish * pointsPerFish);
+        int s = (int)Math.Floor(playerTransform.position.z * distanceModifier);
+        s += (int)(currentCollectedFish * pointsPerFish);
         
         if (s > currentScore)
         {
@@ -79,6 +79,6 @@ public class GameStats : MonoBehaviour
         currentCollectedFish = 0;
         
         OnFishCollected?.Invoke(currentCollectedFish);
-        OnScoreChange?.Invoke((int)currentScore);
+        OnScoreChange?.Invoke(currentScore);
     }
 }

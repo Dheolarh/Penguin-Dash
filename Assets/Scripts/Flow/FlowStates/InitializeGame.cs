@@ -18,8 +18,8 @@ public class InitializeGame : FactoryState
         GameManager.Instance.worldManager.ResetWorld();
         Invoke("CallResetGame", 0.1f);
         Invoke("StartRunningState", 1f);
-        highScoreText.text = GameStats.Instance.highscore.ToString();
-        totalFishCountText.text = GameStats.Instance.totalCollectedFish.ToString();
+        highScoreText.text = $"HighScore: {SaveManager.Instance.saveData.HighScore:D7}";
+        totalFishCountText.text = $"Total Fish: {SaveManager.Instance.saveData.Fish:D6}";
         MenuCanvas.SetActive(true);
     }
 

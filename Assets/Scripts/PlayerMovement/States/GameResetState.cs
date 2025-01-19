@@ -18,10 +18,16 @@ public class GameResetState : BaseState
     public override void EnterState()
     {
         GameManager.Instance.GetComponent<GameStart>().GameplayCanvas.SetActive(false);
+        GameStats.Instance.totalCollectedFish += GameStats.Instance.currentCollectedFish;
+        if (GameStats.Instance.currentScore > SaveManager.Instance.saveData.HighScore)
+        {
+            SaveManager.Instance.saveData.HighScore = GameStats.Instance.currentScore;
+            SaveManager.Instance.Save();
+        }
         PostDeathCanvas.SetActive(true);
         deathTime = Time.time;
         reviveCountDown = Time.time + counter;
-        //highScoreText.text =
+        highScoreText.text = $"Highscore: {SaveManager.Instance.saveData.HighScore:D7}";
         fishCountText.text = GameStats.Instance.FishToText();
         scoreText.text = GameStats.Instance.CurrentScoreToText();
         Debug.Log("Entered Game Reset State");
@@ -36,6 +42,7 @@ public class GameResetState : BaseState
         {
             PostDeathCanvas.SetActive(false);
             _movement.ResetGame();
+            SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
             Invoke("InitializeGame", .1f);
         }
     }
@@ -45,6 +52,13 @@ public class GameResetState : BaseState
         PostDeathCanvas.SetActive(false);
         _movement.ResetGame();
         Invoke("InitializeGame", .1f);
+        
+        if (GameStats.Instance.currentScore > SaveManager.Instance.saveData.HighScore)
+            SaveManager.Instance.saveData.HighScore = GameStats.Instance.currentScore;
+        
+        SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
+        
+        SaveManager.Instance.Save();
     }
 
     public void Revive()
@@ -61,6 +75,7 @@ public class GameResetState : BaseState
     
     public override void ExitState()
     {
+        SaveManager.Instance.Save();
         PostDeathCanvas.SetActive(false);
     }
 }
