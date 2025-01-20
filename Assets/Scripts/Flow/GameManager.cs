@@ -40,16 +40,10 @@ public class GameManager : MonoBehaviour
     public PlayerMovement startGame;
     public WorldGeneration worldManager;
     public List<GameObject> cameras;
-
-    
-    void Awake()
-    {
-        instance = this;
-       
-    }
     
     void Start()
     {
+        instance = this;
         Debug.Log("Game Manager Started");
         currentFlow = GetComponent<InitializeGame>();
         currentFlow.EnterFlow();
@@ -57,6 +51,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         currentFlow.UpdateFlow();
+    }
+
+    private void FixedUpdate()
+    {
+            currentFlow.FixedUpdateFlow();
     }
 
     public void ChangeFlow(FactoryState newFlow)

@@ -18,6 +18,7 @@ public abstract class FactoryState : MonoBehaviour
     }
     public virtual void ExitFlow(){}
     public virtual void UpdateFlow(){}
+    public virtual void FixedUpdateFlow(){}
     public virtual void StartFlow()
     {
         Debug.Log($"No action to do in {this.ToString()}");

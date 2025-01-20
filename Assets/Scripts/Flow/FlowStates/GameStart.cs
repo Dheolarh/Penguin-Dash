@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class GameStart : FactoryState
 {
     public GameObject GameplayCanvas;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI fishCountText;
+    private int endNotification;
     public override void EnterFlow()
     {
+        endNotification = 0;
         if (GameManager.Instance.startGame.isPaused == true)
         {
             GameManager.Instance.startGame.ResumeGame();
@@ -20,6 +23,8 @@ public class GameStart : FactoryState
         Debug.Log("Game Start");
         GameStats.Instance.OnFishCollected += CollectedFish;
         GameStats.Instance.OnScoreChange += Score;
+        
+        
         GameplayCanvas.SetActive(true);
     }
 
@@ -36,6 +41,18 @@ public class GameStart : FactoryState
     public override void UpdateFlow()
     {
         GameManager.Instance.worldManager.ScanPosition();
+    }
+    
+    private void highScoreAlert(GameObject highScoreBoard)
+    {
+        Debug.Log("High Score Alert");
+        highScoreBoard.SetActive(true);
+        Invoke("DisableNotifier", 5f);
+    }
+
+    public override void FixedUpdateFlow()
+    {
+        base.FixedUpdateFlow();
     }
 
     public override void ExitFlow()

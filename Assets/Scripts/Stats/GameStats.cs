@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cache = UnityEngine.Cache;
 
 public class GameStats : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class GameStats : MonoBehaviour
     }
     
     public Transform playerTransform;
+    
+    public GameObject highScoreBoard;
+    private bool hasNotified = false;
+    public bool alertChecker;
 
     //Score
     public int currentScore;
@@ -54,8 +59,29 @@ public class GameStats : MonoBehaviour
                 OnScoreChange?.Invoke(currentScore);
             }
         }
-    }
 
+        if ((SaveManager.Instance.saveData.HighScore < currentScore) && !alertChecker)
+        {
+            alertChecker = true;
+            SaveManager.Instance.saveData.HighScore = currentScore;
+            SaveManager.Instance.Save();
+            if (!hasNotified)
+            {
+                highScoreBoard.SetActive(true);
+                hasNotified = true;
+            }
+        }
+        
+        if (highScoreBoard.activeSelf && hasNotified)
+        {
+            hasNotified = false;
+            Invoke("DisableNotifier", 5f);
+        }
+    }
+    private void DisableNotifier()
+    {
+        highScoreBoard.SetActive(false);
+    }
     public void CollectFish()
     {
         currentCollectedFish++;

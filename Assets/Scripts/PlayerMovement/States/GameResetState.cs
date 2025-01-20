@@ -22,7 +22,12 @@ public class GameResetState : BaseState
         if (GameStats.Instance.currentScore > SaveManager.Instance.saveData.HighScore)
         {
             SaveManager.Instance.saveData.HighScore = GameStats.Instance.currentScore;
+            highScoreText.color = Color.green;
             SaveManager.Instance.Save();
+        }
+        else
+        {
+            highScoreText.color = Color.white;
         }
         PostDeathCanvas.SetActive(true);
         deathTime = Time.time;

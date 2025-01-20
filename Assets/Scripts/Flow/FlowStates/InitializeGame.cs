@@ -27,7 +27,11 @@ public class InitializeGame : FactoryState
     {
         flow.enabled = true;
     }
-    
+
+    public override void FixedUpdateFlow()
+    {
+        base.FixedUpdateFlow();
+    }
     public void OnPlayClick()
     {
         flow.ChangeFlow(GetComponent<GameStart>());
