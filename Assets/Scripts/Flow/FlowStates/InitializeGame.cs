@@ -40,8 +40,7 @@ public class InitializeGame : FactoryState
     
     public void OnShopClick()
     {
-        //flow.ChangeFlow(GetComponent<ShopState>());
-        Debug.Log("Shop Clicked");
+        flow.ChangeFlow(GetComponent<ShopState>());
     }
         
 

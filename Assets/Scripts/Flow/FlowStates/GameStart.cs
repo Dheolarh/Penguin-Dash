@@ -1,20 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEngine.UI;
-
 public class GameStart : FactoryState
 {
     public GameObject GameplayCanvas;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI fishCountText;
-    private int endNotification;
     public override void EnterFlow()
     {
-        endNotification = 0;
         if (GameManager.Instance.startGame.isPaused == true)
         {
             GameManager.Instance.startGame.ResumeGame();
