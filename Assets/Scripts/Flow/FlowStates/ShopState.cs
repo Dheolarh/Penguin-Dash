@@ -7,6 +7,10 @@ public class ShopState : FactoryState
 {
     public GameObject ShopCanvas;
     public TextMeshProUGUI totalFish;
+    
+    //Shop Items
+    public GameObject ShopItemPrefab;
+    public Transform ShopItemParent;
     public override void EnterFlow()
     {
         GameManager.Instance.ChangeCamera(GameCameras.ShopCam);
@@ -24,3 +28,4 @@ public class ShopState : FactoryState
         ShopCanvas.SetActive(false);
     }
 }
+
