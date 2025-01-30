@@ -2,23 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopState : FactoryState
 {
     public GameObject ShopCanvas;
     public TextMeshProUGUI totalFish;
+    [SerializeField] private Button goToMenu;
     
     //Shop Items
-    public GameObject ShopItemPrefab;
-    public Transform ShopItemParent;
+    public GameObject hatPrefab;
+    public Transform hatParent;
+    public Hats[] hats;
+
+    private void Start()
+    {
+        hats = Resources.LoadAll<Hats>("Hats/");
+        PopulateShop();
+    }
     public override void EnterFlow()
     {
+        flow.enabled = true;
         GameManager.Instance.ChangeCamera(GameCameras.ShopCam);
         totalFish.text = $"x{SaveManager.Instance.saveData.Fish:D5}";
         ShopCanvas.SetActive(true);
     }
+    
+    public override void UpdateFlow()
+    {
+        goToMenu.onClick.AddListener(GoToMenu);
+    }
 
-    public void GoToMenu()
+    public void GoToMenu()  
     {
         flow.ChangeFlow(GetComponent<InitializeGame>());
     }
@@ -27,5 +42,20 @@ public class ShopState : FactoryState
     {
         ShopCanvas.SetActive(false);
     }
-}
+    private void PopulateShop()
+    {
+        for (int i = 0 ; i < hats.Length; i++)
+        {
+            GameObject hat = Instantiate(hatPrefab, hatParent);
+            hat.GetComponent<Button>().onClick.AddListener(() => OnHatClick(i));
+            hat.transform.GetChild(1).GetComponent<Image>().sprite = hats[i].Thumbnail;
+            hat.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = hats[i].HatName;
+            hat.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = hats[i].HatPrice.ToString();
+        }
+    }
 
+    private void OnHatClick(int i)
+    {
+       
+    }
+} 
