@@ -13,16 +13,18 @@ public class ShopState : FactoryState
     //Shop Items
     public GameObject hatPrefab;
     public Transform hatParent;
-    public Hats[] hats;
+    private Hats[] hats;
 
-    private void Start()
-    {
-        hats = Resources.LoadAll<Hats>("Hats/");
+    private void Awake()
+    { 
+        hats = Resources.LoadAll<Hats>("Hat/");
         PopulateShop();
     }
+
+
     public override void EnterFlow()
     {
-        flow.enabled = true;
+        base.Awake();
         GameManager.Instance.ChangeCamera(GameCameras.ShopCam);
         totalFish.text = $"x{SaveManager.Instance.saveData.Fish:D5}";
         ShopCanvas.SetActive(true);
@@ -48,8 +50,8 @@ public class ShopState : FactoryState
         {
             GameObject hat = Instantiate(hatPrefab, hatParent);
             hat.GetComponent<Button>().onClick.AddListener(() => OnHatClick(i));
-            hat.transform.GetChild(1).GetComponent<Image>().sprite = hats[i].Thumbnail;
             hat.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = hats[i].HatName;
+            hat.transform.GetChild(1).GetComponent<Image>().sprite = hats[i].Thumbnail;
             hat.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = hats[i].HatPrice.ToString();
         }
     }
