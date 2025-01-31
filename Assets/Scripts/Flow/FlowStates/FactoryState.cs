@@ -6,7 +6,7 @@ public abstract class FactoryState : MonoBehaviour
 {
     protected GameManager flow;
     
-    public void Awake()
+    protected virtual void Awake()
     {
         flow = GetComponent<GameManager>();
     }

@@ -5,6 +5,8 @@ public class SaveState
 {
     public int HighScore { set; get; }
     public int Fish { set; get; }
+    
+    public int currentHat { set; get; }
     public DateTime LastSave { set; get; }
 
     public SaveState()

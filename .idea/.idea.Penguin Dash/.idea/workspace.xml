@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/HatsLogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/HatsLogic.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/FactoryState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/FactoryState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/InitializeGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/InitializeGame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SaveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/SaveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World Generation/WorldGeneration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World Generation/WorldGeneration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,31 +46,35 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2qWIzdVD6BGhlivrB2RyQijws7u" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;do_not_show_Android_plugin_suggestion&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Stats-system&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "do_not_show_Android_plugin_suggestion": "true",
+    "git-widget-placeholder": "Stats-system",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\adeju\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\adeju\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\adeju\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\adeju\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\adeju\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\adeju\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Unity.exe" />
@@ -188,7 +196,7 @@
       <workItem from="1738158801204" duration="3388000" />
       <workItem from="1738224234854" duration="440000" />
       <workItem from="1738306633880" duration="953000" />
-      <workItem from="1738308314735" duration="832000" />
+      <workItem from="1738308314735" duration="4519000" />
     </task>
     <servers />
   </component>
@@ -203,6 +211,7 @@
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
