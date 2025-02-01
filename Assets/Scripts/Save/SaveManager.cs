@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public class SaveManager: MonoBehaviour
-{
+{ 
     public static SaveManager Instance { get {return instance; }}
     private static SaveManager instance;
 

@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/HatsLogic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/HatsLogic.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/FactoryState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/FactoryState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SaveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/SaveState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World Generation/WorldGeneration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World Generation/WorldGeneration.cs" afterDir="false" />
-    </list>
+    <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +186,7 @@
       <workItem from="1738158801204" duration="3388000" />
       <workItem from="1738224234854" duration="440000" />
       <workItem from="1738306633880" duration="953000" />
-      <workItem from="1738308314735" duration="4519000" />
+      <workItem from="1738308314735" duration="5016000" />
     </task>
     <servers />
   </component>

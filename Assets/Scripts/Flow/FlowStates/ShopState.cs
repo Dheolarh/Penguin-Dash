@@ -61,6 +61,7 @@ public class ShopState : FactoryState
 
     private void OnHatClick(int i)
     {
+        SaveManager.Instance.saveData.CurrentHat = i;
        hatLogic.SelectHat(i);
        if (hats[i].HatName == String.Empty)
        {
@@ -70,5 +71,6 @@ public class ShopState : FactoryState
        {
               currentHatName.text = hats[i].HatName;
        }
+       SaveManager.Instance.Save();
     }
 } 

@@ -11,7 +11,7 @@ public class HatsLogic : MonoBehaviour
     {
         hats = Resources.LoadAll<Hats>("Hat");
         SpawnHats();
-        SelectHat(SaveManager.Instance.saveData.currentHat);
+        SelectHat(SaveManager.Instance.saveData.CurrentHat);
     }
 
     private void SpawnHats()
