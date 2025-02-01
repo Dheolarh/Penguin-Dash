@@ -16,6 +16,7 @@ public class ShopState : FactoryState
     
     //Shop Items
     public GameObject hatPrefab;
+    private GameObject hat;
     public Transform hatParent;
     private Hats[] hats;
     public HatsLogic hatLogic;
@@ -55,7 +56,7 @@ public class ShopState : FactoryState
         for (int i = 0 ; i < hats.Length; i++)
         {
             int index = i;
-            GameObject hat = Instantiate(hatPrefab, hatParent);
+            hat = Instantiate(hatPrefab, hatParent);
             hat.GetComponent<Button>().onClick.AddListener(() => OnHatClick(index));
             hat.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = hats[index].HatName;
             hat.transform.GetChild(1).GetComponent<Image>().sprite = hats[index].Thumbnail;
@@ -102,6 +103,8 @@ public class ShopState : FactoryState
             currentHatName.text = hats[i].HatName;
             SaveManager.Instance.Save();
             totalFish.text = $"x{SaveManager.Instance.saveData.Fish:D5}";
+            Image hatButton = hat.GetComponent<Button>().image;
+            hatButton.color = new Color(1f, 1f, 1f, 110f / 255f);
             buyStatus.color = Color.green;
             buyStatus.text = "Hat Purchased";
             Invoke("HideBuyStatus", 2f);
