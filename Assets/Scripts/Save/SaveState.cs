@@ -16,8 +16,6 @@ public class SaveState
         Fish = 0;
         CurrentHat = 0;
         UnlockedHats = new ushort[HatsCount];
-        UnlockedHats[0] = 1;
-        UnlockedHats[1] = 0;
         LastSave = DateTime.Now;
     }
 }
