@@ -86,6 +86,10 @@ public class ShopState : FactoryState
             {
                 buttonImage.color = new Color(1f, 0f, 0f, 110f / 255f);
             }
+            if (index == SaveManager.Instance.saveData.CurrentHat)
+            {
+                hat.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Equipped";
+            }
         }
     }
 
@@ -118,6 +122,8 @@ public class ShopState : FactoryState
             buyStatus.color = Color.green;
             buyStatus.text = "Hat Purchased";
             hat.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Owned";
+            
+            PopulateShop();
             SaveManager.Instance.Save();
             Invoke("HideBuyStatus", 2f);
         }
@@ -127,7 +133,6 @@ public class ShopState : FactoryState
             buyStatus.text = "Not Enough Fish";
             Invoke("HideBuyStatus", 2f);
         }
-
     }
 
     private void HideBuyStatus()

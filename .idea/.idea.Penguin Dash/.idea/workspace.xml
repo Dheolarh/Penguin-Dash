@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Hat/Horn.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Hat/Horn.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Default Penguin.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Default Penguin.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats 4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hat/Hats.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SaveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/SaveState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +192,7 @@
       <workItem from="1738308314735" duration="5016000" />
       <workItem from="1738424895984" duration="8883000" />
       <workItem from="1738481030491" duration="7221000" />
+      <workItem from="1738492136312" duration="1363000" />
     </task>
     <servers />
   </component>
