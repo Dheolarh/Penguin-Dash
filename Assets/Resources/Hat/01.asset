@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f3dff8f9dca33443b2a01a07336f5b3, type: 3}
-  m_Name: Hats 3
+  m_Name: 01
   m_EditorClassIdentifier: 
-  HatName: Small Horn Hat
-  Thumbnail: {fileID: 21300000, guid: 50d2eee8366dd9c4d82d7218845ce7d0, type: 3}
-  HatPrice: 2
-  Hat: {fileID: 100000, guid: e768275eb0226684ebab155abe0233e1, type: 3}
+  HatName: None
+  Thumbnail: {fileID: 21300000, guid: e312519bd325cea44add0f9a4720222d, type: 3}
+  HatPrice: 0
+  Hat: {fileID: 4870386394372929304, guid: 8af0fd692e6580b40b015d4e219f8418, type: 3}

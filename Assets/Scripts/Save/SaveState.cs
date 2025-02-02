@@ -13,9 +13,10 @@ public class SaveState
     public SaveState()
     {
         HighScore = 0;
-        Fish = 0;
+        Fish = 100;
         CurrentHat = 0;
         UnlockedHats = new ushort[HatsCount];
+        UnlockedHats[0] = 1;
         LastSave = DateTime.Now;
     }
 }

@@ -17,6 +17,7 @@ public class ShopState : FactoryState
     //Shop Items
     public GameObject hatPrefab;
     private GameObject hat;
+
     public Transform hatParent;
     private Hats[] hats;
     public HatsLogic hatLogic;
@@ -24,16 +25,16 @@ public class ShopState : FactoryState
     protected override void Awake()
     { 
         base.Awake();
-        hats = Resources.LoadAll<Hats>("Hat/");
-        PopulateShop();
+        
     } 
     public override void EnterFlow()
     {
+        hats = Resources.LoadAll<Hats>("Hat/");
         GameManager.Instance.ChangeCamera(GameCameras.ShopCam);
         totalFish.text = $"x{SaveManager.Instance.saveData.Fish:D5}";
         currentHatName.text = "Shop";
+        PopulateShop();
         ShopCanvas.SetActive(true);
-
     }
     
     public override void UpdateFlow()
@@ -50,9 +51,15 @@ public class ShopState : FactoryState
     {
         ShopCanvas.SetActive(false);
         buyStatus.text = "";
+        SaveManager.Instance.Save();
     }
     private void PopulateShop()
     {
+        foreach (Transform child in hatParent)
+        {
+            Destroy(child.gameObject);
+        }
+        
         for (int i = 0 ; i < hats.Length; i++)
         {
             int index = i;
@@ -62,9 +69,14 @@ public class ShopState : FactoryState
             hat.transform.GetChild(1).GetComponent<Image>().sprite = hats[index].Thumbnail;
             hat.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = hats[index].HatPrice.ToString();
             Image buttonImage = hat.GetComponent<Button>().image;
+            if(hats[index].HatName == "None")
+            {
+                hat.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Owned";
+            }
             if (SaveManager.Instance.saveData.UnlockedHats[i] == 1)
             {
                 buttonImage.color = new Color(1f, 1f, 1f, 110f / 255f);
+                hat.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Owned";
             }
             else if (SaveManager.Instance.saveData.UnlockedHats[i] == 0 && (SaveManager.Instance.saveData.Fish >= hats[i].HatPrice))
             {
@@ -75,7 +87,6 @@ public class ShopState : FactoryState
                 buttonImage.color = new Color(1f, 0f, 0f, 110f / 255f);
             }
         }
-
     }
 
     private void OnHatClick(int i)
@@ -94,19 +105,20 @@ public class ShopState : FactoryState
             }
             SaveManager.Instance.Save();
         }
-        else if(SaveManager.Instance.saveData.Fish >= hats[i].HatPrice)
+        else if (SaveManager.Instance.saveData.Fish >= hats[i].HatPrice)
         {
             SaveManager.Instance.saveData.Fish -= hats[i].HatPrice;
             SaveManager.Instance.saveData.UnlockedHats[i] = 1;
             SaveManager.Instance.saveData.CurrentHat = i;
+            Image soldImage = hat.GetComponent<Button>().image;
+            soldImage.color = new Color(1f, 1f, 1f, 110f / 255f);
             hatLogic.SelectHat(i); 
             currentHatName.text = hats[i].HatName;
-            SaveManager.Instance.Save();
             totalFish.text = $"x{SaveManager.Instance.saveData.Fish:D5}";
-            Image hatButton = hat.GetComponent<Button>().image;
-            hatButton.color = new Color(1f, 1f, 1f, 110f / 255f);
             buyStatus.color = Color.green;
             buyStatus.text = "Hat Purchased";
+            hat.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Owned";
+            SaveManager.Instance.Save();
             Invoke("HideBuyStatus", 2f);
         }
         else
