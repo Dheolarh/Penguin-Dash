@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" afterDir="false" />
-    </list>
+    <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,7 +189,7 @@
       <workItem from="1738308314735" duration="5016000" />
       <workItem from="1738424895984" duration="8883000" />
       <workItem from="1738481030491" duration="7221000" />
-      <workItem from="1738492136312" duration="1363000" />
+      <workItem from="1738492136312" duration="1621000" />
     </task>
     <servers />
   </component>

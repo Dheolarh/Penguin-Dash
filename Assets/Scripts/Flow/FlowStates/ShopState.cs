@@ -107,6 +107,7 @@ public class ShopState : FactoryState
             {
                 currentHatName.text = hats[i].HatName;
             }
+            PopulateShop();
             SaveManager.Instance.Save();
         }
         else if (SaveManager.Instance.saveData.Fish >= hats[i].HatPrice)
