@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RunningState : BaseState
 {
+    
     public override void EnterState()
     {
         _movement.jumpCount = 0;
@@ -22,11 +23,24 @@ public class RunningState : BaseState
 
     public override void UpdateState()
     {
-        if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
-        if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
-        if (InputManager.Instance.swipeUp && _movement.isGrounded) _movement.ChangeState(GetComponent<JumpingState>());
-        if (InputManager.Instance.swipeDown) _movement.ChangeState(GetComponent<SlidingState>());
-        if (!_movement.isGrounded) _movement.ChangeState(GetComponent<FallingState>());
+        if (SaveManager.Instance.saveData.FirstTime == true)
+        {
+            Invoke("StartTutorial", 1f);
+        }
+        else
+        {
+            if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
+            if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
+            if (InputManager.Instance.swipeUp && _movement.isGrounded) _movement.ChangeState(GetComponent<JumpingState>());
+            if (InputManager.Instance.swipeDown) _movement.ChangeState(GetComponent<SlidingState>());
+            if (!_movement.isGrounded) _movement.ChangeState(GetComponent<FallingState>());
+        }
+    }
+
+    void StartTutorial()
+    {
+        _movement.PauseGame();
+        GameManager.Instance.TutorialCanvas.SetActive(true);
     }
     public override void ExitState()
     { 

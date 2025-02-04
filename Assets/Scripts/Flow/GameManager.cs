@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public enum GameCameras
@@ -40,6 +41,9 @@ public class GameManager : MonoBehaviour
     public PlayerMovement startGame;
     public WorldGeneration worldManager;
     public List<GameObject> cameras;
+    public GameObject TutorialCanvas;
+    public float tutorialStartTime;
+    public Image tutorialCanvas;
     
     void Start()
     {
@@ -47,6 +51,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Manager Started");
         currentFlow = GetComponent<InitializeGame>();
         currentFlow.EnterFlow();
+        tutorialCanvas = TutorialCanvas.GetComponentInChildren<Image>();
     }
     void Update()
     {

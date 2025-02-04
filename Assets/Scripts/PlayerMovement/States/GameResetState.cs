@@ -40,16 +40,17 @@ public class GameResetState : BaseState
     
     public override void UpdateState()
     {
-        float circleCounter = (Time.time - deathTime) / counter;
-        countdownCircle.color = Color.Lerp(Color.green, Color.red, circleCounter);
-        countdownCircle.fillAmount = 1 - circleCounter;
-        if (Time.time >= reviveCountDown)
-        {
-            PostDeathCanvas.SetActive(false);
-            _movement.ResetGame();
-            SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
-            Invoke("InitializeGame", .1f);
-        }
+        
+            float circleCounter = (Time.time - deathTime) / counter;
+            countdownCircle.color = Color.Lerp(Color.green, Color.red, circleCounter);
+            countdownCircle.fillAmount = 1 - circleCounter;
+            if (Time.time >= reviveCountDown)
+            {
+                PostDeathCanvas.SetActive(false);
+                _movement.ResetGame();
+                SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
+                Invoke("InitializeGame", .1f);
+            }
     }
 
     public void GoToMenu()

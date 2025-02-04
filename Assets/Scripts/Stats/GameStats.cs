@@ -60,7 +60,9 @@ public class GameStats : MonoBehaviour
             }
         }
 
-        if ((SaveManager.Instance.saveData.HighScore < currentScore) && !alertChecker)
+      
+        
+        if (((SaveManager.Instance.saveData.HighScore < currentScore) && !alertChecker) && SaveManager.Instance.saveData.FirstHighScore)
         {
             alertChecker = true;
             SaveManager.Instance.saveData.HighScore = currentScore;
@@ -71,6 +73,8 @@ public class GameStats : MonoBehaviour
                 hasNotified = true;
             }
         }
+        
+       
         
         if (highScoreBoard.activeSelf && hasNotified)
         {
