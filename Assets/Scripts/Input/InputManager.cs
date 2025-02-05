@@ -128,12 +128,10 @@ public class InputManager : MonoBehaviour
                 if (delta.x > 0)
                 {
                     _swipeRight = true;
-                    Debug.Log("Swipe Right");
                 }
                 else
                 {
                     _swipeLeft = true;
-                    Debug.Log("Swipe Left");
                 }
             }
             else
@@ -141,12 +139,10 @@ public class InputManager : MonoBehaviour
                 if (delta.y > 0)
                 {
                     _swipeUp = true;
-                    Debug.Log("Swipe Up");
                 }
                 else
                 {
                     _swipeDown = true;
-                    Debug.Log("Swipe Down");
                 }
             }
         }

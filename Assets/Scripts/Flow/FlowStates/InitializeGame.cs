@@ -13,7 +13,6 @@ public class InitializeGame : FactoryState
 
     public override void EnterFlow()
     {
-        // flow.enabled = true;
         GameManager.Instance.penguin.transform.position = new Vector3(0, 0, 0);
         GameManager.Instance.worldManager.ResetWorld();
         Invoke("CallResetGame", 0.1f);
@@ -25,7 +24,10 @@ public class InitializeGame : FactoryState
 
     public override void UpdateFlow()
     {
-        flow.enabled = true;
+        if (!flow.isActiveAndEnabled)
+        {
+            flow.enabled = true;
+        }
     }
 
     public override void FixedUpdateFlow()
@@ -56,7 +58,6 @@ public class InitializeGame : FactoryState
 
     public override void ExitFlow()
     {
-        Debug.Log("Exiting Initial State");
         MenuCanvas.SetActive(false);
     }
 }

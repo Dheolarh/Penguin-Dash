@@ -51,6 +51,5 @@ public class RespawnState : BaseState
     public override void ExitState()
     {
         GameManager.Instance.ChangeCamera(GameCameras.PlayCam);
-        Debug.Log("Exited Respawn State");
     }
 }

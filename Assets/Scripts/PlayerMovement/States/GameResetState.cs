@@ -35,7 +35,6 @@ public class GameResetState : BaseState
         highScoreText.text = $"Highscore: {SaveManager.Instance.saveData.HighScore:D7}";
         fishCountText.text = GameStats.Instance.FishToText();
         scoreText.text = GameStats.Instance.CurrentScoreToText();
-        Debug.Log("Entered Game Reset State");
     }
     
     public override void UpdateState()

@@ -10,7 +10,6 @@ public abstract class BaseState : MonoBehaviour
 
     public virtual void EnterState()
     {
-        Debug.Log($"Entered {this.ToString()}");
     }
     public virtual void ExitState(){}
     public virtual void UpdateState(){}
@@ -21,7 +20,6 @@ public abstract class BaseState : MonoBehaviour
     }
     public virtual Vector3 StartState()
     {
-        // Debug.Log($"No action to do in {this.ToString()}");
         return Vector3.zero;
     }
 }

@@ -30,14 +30,12 @@ public class WorldGeneration : MonoBehaviour
     {
         if (chunkPrefab.Count == 0)
         {
-            Debug.LogError("Empty Chunk list");
             return;
         }
 
         if (!cameraSpace)
         {
             if (Camera.main != null) cameraSpace = Camera.main.transform;
-            Debug.Log("Successfully Assigned camera position to main camera position");
         }
     }
 

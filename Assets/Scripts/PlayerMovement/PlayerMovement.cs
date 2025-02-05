@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("Player Movement Started");
         isPaused = true;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
@@ -49,8 +48,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(currentState.ToString());
-        // Debug.Log(GameManager.Instance.currentFlow.ToString());
         if (!isPaused) Movement();
        
     }
@@ -144,7 +141,6 @@ public class PlayerMovement : MonoBehaviour
         string hitLayerName = LayerMask.LayerToName(hit.gameObject.layer);
         if (hitLayerName == "Death" && deathDebug == true)
         {
-            Debug.Log($"Death Bug in {this.ToString()} == {deathDebug.ToString()}");
             ChangeState(GetComponent<DeathState>());
         }
     }

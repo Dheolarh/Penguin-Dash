@@ -17,7 +17,7 @@ public class SaveState
         FirstTime = true;
         FirstHighScore = false;
         HighScore = 0;
-        Fish = 100;
+        Fish = 0;
         CurrentHat = 0;
         UnlockedHats = new ushort[HatsCount];
         UnlockedHats[0] = 1;

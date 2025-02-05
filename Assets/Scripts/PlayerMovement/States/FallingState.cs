@@ -9,7 +9,6 @@ public class FallingState : BaseState
     public override void EnterState()
     {
         _movement.animator.SetTrigger("Fall");
-        Debug.Log($"Entered {this.ToString()}");
     }
     
     public override Vector3 StartState()

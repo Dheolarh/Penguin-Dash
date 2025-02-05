@@ -8,7 +8,7 @@ public class SaveManager: MonoBehaviour
     public static SaveManager Instance { get {return instance; }}
     private static SaveManager instance;
 
-    private const string SaveFile = "data.pd";
+    private const string SaveFile = ".sav";
     public SaveState saveData;
     private BinaryFormatter formatter;
 
@@ -33,7 +33,7 @@ public class SaveManager: MonoBehaviour
         }
         catch
         {
-            Debug.Log("Save Data not found, Create new save file");
+            Debug.Log("Creating Save Data");
             Save();
         }
     }

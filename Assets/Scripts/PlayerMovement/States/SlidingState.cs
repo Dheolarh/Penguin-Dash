@@ -13,10 +13,8 @@ public class SlidingState : BaseState
    public override void EnterState()
    {
       _movement.jumpCount = 0;
-      Debug.Log(Time.time);
       _movement.animator.SetTrigger("Slide");
       slideStartTime = Time.time;
-      Debug.Log($"Entered {this.ToString()}");
       
       initialHeight = _movement.controller.height;
       initialCenter = _movement.controller.center;
@@ -45,7 +43,6 @@ public class SlidingState : BaseState
 
    public override void ExitState()
    {
-      Debug.Log(Time.time);
       _movement.controller.height = initialHeight;
       _movement.controller.center = initialCenter;
       _movement.animator?.SetTrigger("Running");

@@ -10,7 +10,6 @@ public class DeathState : BaseState
     public override void EnterState()
     { 
         _movement.deathDebug = false;
-        Debug.Log($"Death Bug in {this.ToString()} == {_movement.deathDebug.ToString()}");
        _movement.animator?.SetTrigger("Death");
        currentKnockback = knockbackForce;
     }

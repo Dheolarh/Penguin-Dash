@@ -17,7 +17,6 @@ public class GameStart : FactoryState
             GameManager.Instance.startGame.ResumeGame();
         }
         GameManager.Instance.ChangeCamera(GameCameras.PlayCam);
-        Debug.Log("Game Start");
         GameStats.Instance.OnFishCollected += CollectedFish;
         GameStats.Instance.OnScoreChange += Score;
         
@@ -43,6 +42,8 @@ public class GameStart : FactoryState
             if (InputManager.Instance.tap)
             {
                 GameManager.Instance.tutorialCanvas.color = new Color(1f, 1f, 1f, 0 / 255);
+                GameManager.Instance.ResumeTime();
+                GameManager.Instance.startGame.PauseGame();
                 StartCoroutine(ResumePlayCountdown());
             }
         }
@@ -70,7 +71,6 @@ public class GameStart : FactoryState
 
     public override void ExitFlow()
     {
-        Debug.Log("Exiting Game Start");
         GameplayCanvas.SetActive(false);
         GameStats.Instance.OnFishCollected -= CollectedFish;
         GameStats.Instance.OnScoreChange -= Score;

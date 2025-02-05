@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        Debug.Log("Game Manager Started");
         currentFlow = GetComponent<InitializeGame>();
         currentFlow.EnterFlow();
         tutorialCanvas = TutorialCanvas.GetComponentInChildren<Image>();
@@ -77,15 +76,15 @@ public class GameManager : MonoBehaviour
         
         cameras[(int)camera].SetActive(true);
     }
-    
-    public void GameOver()
+
+    public void PauseTime()
     {
-        Debug.Log("Game Over");
-        ReloadScene();
+        Time.timeScale = 0;
     }
-    public void ReloadScene()
+    
+    public void ResumeTime()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     private void OnDisable()

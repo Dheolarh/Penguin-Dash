@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class RunningState : BaseState
 {
-    
+    public bool timeCheck;
     public override void EnterState()
     {
         _movement.jumpCount = 0;
+        
         _movement.animator?.SetTrigger("Running");
         _movement.verticalVelocity = 0;
     }
@@ -25,7 +26,7 @@ public class RunningState : BaseState
     {
         if (SaveManager.Instance.saveData.FirstTime == true)
         {
-            Invoke("StartTutorial", 1f);
+            Invoke("StartTutorial", 0.5f);
         }
         else
         {
@@ -39,12 +40,15 @@ public class RunningState : BaseState
 
     void StartTutorial()
     {
-        _movement.PauseGame();
+        if(!timeCheck)
+        {
+            GameManager.Instance.PauseTime();
+            timeCheck = true;
+        }
         GameManager.Instance.TutorialCanvas.SetActive(true);
     }
     public override void ExitState()
     { 
-        Debug.Log("Exited Running State");
     }
 
 }
