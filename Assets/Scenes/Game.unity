@@ -4613,6 +4613,7 @@ GameObject:
   - component: {fileID: 1217961964}
   - component: {fileID: 1217961958}
   - component: {fileID: 1217961957}
+  - component: {fileID: 1217961965}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Fish
@@ -4742,6 +4743,21 @@ MonoBehaviour:
   hatPrefab: {fileID: 6812873280371188892, guid: 22c7e015f495c2945b3bbdad1f27ed3b, type: 3}
   hatParent: {fileID: 207082661}
   hatLogic: {fileID: 1679399266}
+--- !u!114 &1217961965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217961956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f35cd64d010ca4cbd0aa905d1e47cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameID: 5789846
+  rewardedAdID: Rewarded_Android
+  testMode: 1
 --- !u!1 &1227667779
 GameObject:
   m_ObjectHideFlags: 0
@@ -6395,7 +6411,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1679399265}
         m_TargetAssemblyTypeName: GameResetState, Assembly-CSharp
-        m_MethodName: Revive
+        m_MethodName: TryRevive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -37,8 +37,10 @@ public class GameStart : FactoryState
     public override void UpdateFlow()
     {
         GameManager.Instance.worldManager.ScanPosition();
+
         if (GameManager.Instance.TutorialCanvas.activeSelf == true)
         {
+            GameplayCanvas.SetActive(false);
             if (InputManager.Instance.tap)
             {
                 GameManager.Instance.tutorialCanvas.color = new Color(1f, 1f, 1f, 0 / 255);
@@ -60,6 +62,10 @@ public class GameStart : FactoryState
             yield return null;
         }
         GameManager.Instance.TutorialCanvas.SetActive(false);
+        if (GameplayCanvas.activeSelf == false)
+        {
+            GameplayCanvas.SetActive(true);
+        }
         GameManager.Instance.startGame.ResumeGame();
         SaveManager.Instance.saveData.FirstTime = false;
     }
