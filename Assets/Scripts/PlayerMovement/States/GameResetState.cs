@@ -36,7 +36,7 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
             highScoreText.color = Color.white;
         }
         PostDeathCanvas.SetActive(true);
-        countdownCircle.gameObject.SetActive(true);
+        if(!GameManager.Instance.revived) countdownCircle.gameObject.SetActive(true);
         deathTime = Time.time;
         reviveCountDown = Time.time + counter;
         highScoreText.text = $"Highscore: {SaveManager.Instance.saveData.HighScore:D7}";
@@ -46,17 +46,19 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
 
     public override void UpdateState()
     {
-        float circleCounter = (Time.time - deathTime) / counter;
-        countdownCircle.color = Color.Lerp(Color.green, Color.red, circleCounter);
-        countdownCircle.fillAmount = 1 - circleCounter;
-        if (Time.time >= reviveCountDown && countdownCircle.gameObject.activeSelf)
+        if (!GameManager.Instance.revived)
         {
-            PostDeathCanvas.SetActive(false);
-            _movement.ResetGame();
-            SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
-            Invoke("InitializeGame", .1f);
+            float circleCounter = (Time.time - deathTime) / counter;
+            countdownCircle.color = Color.Lerp(Color.green, Color.red, circleCounter);
+            countdownCircle.fillAmount = 1 - circleCounter;
+            if (Time.time >= reviveCountDown && countdownCircle.gameObject.activeSelf)
+            {
+                PostDeathCanvas.SetActive(false);
+                _movement.ResetGame();
+                SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
+                Invoke("InitializeGame", .1f);
+            }
         }
-        
     }
     
     public void StopCountdown()
@@ -83,6 +85,7 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
         PostDeathCanvas.SetActive(false);
         _movement.PauseGame();
         _movement.Respawn();
+        GameManager.Instance.revived = true;
     }
 
     public void TryRevive()

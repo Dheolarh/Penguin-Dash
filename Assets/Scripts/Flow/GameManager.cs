@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public GameObject TutorialCanvas;
     public float tutorialStartTime;
     public Image tutorialCanvas;
+    public bool revived;
     
     void Start()
     {

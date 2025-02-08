@@ -13,6 +13,7 @@ public class InitializeGame : FactoryState
 
     public override void EnterFlow()
     {
+        GameManager.Instance.revived = false;
         GameManager.Instance.penguin.transform.position = new Vector3(0, 0, 0);
         GameManager.Instance.worldManager.ResetWorld();
         Invoke("CallResetGame", 0.1f);

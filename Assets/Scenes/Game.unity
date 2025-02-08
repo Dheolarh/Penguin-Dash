@@ -4676,6 +4676,7 @@ MonoBehaviour:
   TutorialCanvas: {fileID: 381831895}
   tutorialStartTime: 0
   tutorialCanvas: {fileID: 0}
+  revived: 0
 --- !u!4 &1217961961
 Transform:
   m_ObjectHideFlags: 0
