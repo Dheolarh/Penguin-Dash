@@ -5,10 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc7ac908-27fc-4dea-a735-d8cadba541fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/RebellionSquad-ZpprZ SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/RebellionSquad-ZpprZ SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/RebellionSquad-ZpprZ.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts/RebellionSquad-ZpprZ.ttf.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Penguin Dash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/InitializeGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/InitializeGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/GameResetState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/GameResetState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Hats.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Hats.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flow/FlowStates/ShopState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/JumpingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/States/JumpingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/High Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/High Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Low Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Low Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Low Settings_Renderer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Low Settings_Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Medium settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Medium settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Medium settings_Renderer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Medium settings_Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +221,7 @@
       <workItem from="1738785485534" duration="1795000" />
       <workItem from="1738822537774" duration="15229000" />
       <workItem from="1739031132215" duration="1863000" />
+      <workItem from="1739202106674" duration="2159000" />
     </task>
     <servers />
   </component>

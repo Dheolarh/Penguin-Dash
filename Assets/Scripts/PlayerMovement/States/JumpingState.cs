@@ -26,6 +26,8 @@ public class JumpingState : BaseState
 
      public override void UpdateState()
      {
+         if (InputManager.Instance.swipeLeft) _movement.ChangeLane(-1);
+         if (InputManager.Instance.swipeRight) _movement.ChangeLane(1);
          elapsedAirTime = Time.time;
          if((elapsedAirTime - airTime) <= 1.5f && _movement.jumpCount < 1 && InputManager.Instance.swipeUp )
          {

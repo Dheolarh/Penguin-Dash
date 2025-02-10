@@ -35,6 +35,7 @@ public class ShopState : FactoryState
         currentHatName.text = "Shop";
         PopulateShop();
         ShopCanvas.SetActive(true);
+        buyStatus.gameObject.SetActive(true);
     }
     
     public override void UpdateFlow()
@@ -51,6 +52,7 @@ public class ShopState : FactoryState
     {
         ShopCanvas.SetActive(false);
         buyStatus.text = "";
+        buyStatus.gameObject.SetActive(false);
         SaveManager.Instance.Save();
     }
     private void PopulateShop()
