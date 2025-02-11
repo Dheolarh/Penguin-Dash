@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f3dff8f9dca33443b2a01a07336f5b3, type: 3}
-  m_Name: Knight
+  m_Name: 06ShowerCap
   m_EditorClassIdentifier: 
-  HatName: Knight Hat
-  Thumbnail: {fileID: 21300000, guid: 726c82e20e04a3e4792602b63ea53160, type: 3}
-  HatPrice: 100
-  Hat: {fileID: 100000, guid: aa7a33fd1d3f6e04f86d6eee5cc1deda, type: 3}
+  HatName: Shower Cap
+  Thumbnail: {fileID: 21300000, guid: 3fde724faa322194d8cadc593087fc9d, type: 3}
+  HatPrice: 200
+  Hat: {fileID: 4344304204014551753, guid: 839db89cfc3fb2d43b72b3f87a6b81d9, type: 3}

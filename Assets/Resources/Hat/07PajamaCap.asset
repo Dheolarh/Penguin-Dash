@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f3dff8f9dca33443b2a01a07336f5b3, type: 3}
-  m_Name: Horn
+  m_Name: 07PajamaCap
   m_EditorClassIdentifier: 
-  HatName: Devil Horn Hat
-  Thumbnail: {fileID: 21300000, guid: 0001e3c4670c77b4ab883a85791333da, type: 3}
-  HatPrice: 50
-  Hat: {fileID: 100000, guid: ff9129c8dacde4d40b8b478a22c4ed6f, type: 3}
+  HatName: Pajama Cap
+  Thumbnail: {fileID: 21300000, guid: d9a6fa78388c1374b9b216f51c61f8a6, type: 3}
+  HatPrice: 300
+  Hat: {fileID: 2556737225973255575, guid: ec469082b85d84347a80eb1a2f251c32, type: 3}
