@@ -2,27 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using JetBrains.Annotations;
 
 public class Fish : MonoBehaviour
 {
 
     private Animator anims;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         anims = GetComponentInParent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player")) PickUpFish();
+        if(other.tag == "Player") PickUpFish();
     }
 
     private void PickUpFish()
@@ -31,7 +24,9 @@ public class Fish : MonoBehaviour
         GameStats.Instance.CollectFish();
     }
 
-    public void FishInChunk()
+    
+    [UsedImplicitly]
+    public void OnShowChunk()
     {
         anims?.SetTrigger("Idle");
     }

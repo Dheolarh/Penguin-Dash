@@ -13,6 +13,7 @@ public class ShopState : FactoryState
     public TextMeshProUGUI currentHatName;
     [FormerlySerializedAs("noFish")] public TextMeshProUGUI buyStatus;
     [SerializeField] private Button goToMenu;
+    [SerializeField] private GameObject buyStatusIndicator;
     
     //Shop Items
     public GameObject hatPrefab;
@@ -33,9 +34,9 @@ public class ShopState : FactoryState
         GameManager.Instance.ChangeCamera(GameCameras.ShopCam);
         totalFish.text = $"x{SaveManager.Instance.saveData.Fish:D5}";
         currentHatName.text = "Shop";
+        buyStatusIndicator.SetActive(true);
         PopulateShop();
         ShopCanvas.SetActive(true);
-        buyStatus.gameObject.SetActive(true);
     }
     
     public override void UpdateFlow()
@@ -52,7 +53,7 @@ public class ShopState : FactoryState
     {
         ShopCanvas.SetActive(false);
         buyStatus.text = "";
-        buyStatus.gameObject.SetActive(false);
+        buyStatusIndicator.SetActive(false);
         SaveManager.Instance.Save();
     }
     private void PopulateShop()

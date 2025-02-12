@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.995283, g: 0.9992094, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 0.375, g: 0.45, b: 0.5, a: 1}
-  m_AmbientGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.6367924, g: 0.69405955, b: 1, a: 1}
+  m_AmbientGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -708,7 +708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &192317395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,7 +2323,7 @@ GameObject:
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2785,8 +2785,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594113978}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0077445796, y: -0.8963857, z: 0.016449278, w: 0.44290188}
-  m_LocalPosition: {x: 2.2267432, y: 1.1218934, z: 1.7647696}
+  m_LocalRotation: {x: -0.00033938774, y: 0.9988002, z: 0.010494596, w: -0.047831602}
+  m_LocalPosition: {x: 0.20148492, y: 1.0607095, z: 1.1868587}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5144,7 +5144,7 @@ GameObject:
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Fish
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5268,6 +5268,7 @@ MonoBehaviour:
   currentHatName: {fileID: 606080830}
   buyStatus: {fileID: 977787845}
   goToMenu: {fileID: 543106106}
+  buyStatusIndicator: {fileID: 192317394}
   hatPrefab: {fileID: 6812873280371188892, guid: 22c7e015f495c2945b3bbdad1f27ed3b, type: 3}
   hatParent: {fileID: 207082661}
   hatLogic: {fileID: 1679399266}
@@ -5748,7 +5749,7 @@ GameObject:
   m_Layer: 0
   m_Name: WorldGeneration
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8844,14 +8845,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049595700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0077445796, y: -0.8963857, z: 0.016449278, w: 0.44290188}
-  m_LocalPosition: {x: -0.40674162, y: -4.969816, z: 6.800911}
+  m_LocalRotation: {x: -0.0021185104, y: 0.9761308, z: 0.010284146, w: -0.21692969}
+  m_LocalPosition: {x: -1.99, y: -5.188, z: 6.054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 729378589}
   m_Father: {fileID: 1211129452}
-  m_LocalEulerAnglesHint: {x: 2.083, y: -127.412, z: 0.039}
+  m_LocalEulerAnglesHint: {x: -1.098, y: -154.936, z: -0.493}
 --- !u!114 &2049595702
 MonoBehaviour:
   m_ObjectHideFlags: 0

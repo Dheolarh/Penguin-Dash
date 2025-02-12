@@ -40,6 +40,5 @@ public class JumpingState : BaseState
 
      public override void ExitState()
      {
-         Debug.Log(_movement.jumpCount);
      }
 }
