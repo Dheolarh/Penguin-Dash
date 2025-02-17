@@ -12,7 +12,6 @@ public class ShopState : FactoryState
     public TextMeshProUGUI totalFish;
     public TextMeshProUGUI currentHatName;
     [FormerlySerializedAs("noFish")] public TextMeshProUGUI buyStatus;
-    [SerializeField] private Button goToMenu;
     [SerializeField] private GameObject buyStatusIndicator;
     
     //Shop Items
@@ -41,11 +40,11 @@ public class ShopState : FactoryState
     
     public override void UpdateFlow()
     {
-        goToMenu.onClick.AddListener(GoToMenu);
     }
 
     public void GoToMenu()  
     {
+        sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.buttonClickSound);
         flow.ChangeFlow(GetComponent<InitializeGame>());
     }
     
@@ -100,6 +99,7 @@ public class ShopState : FactoryState
     {
         if (SaveManager.Instance.saveData.UnlockedHats[i] == 1)
         {
+            sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.buttonClickSound);
             SaveManager.Instance.saveData.CurrentHat = i;
             hatLogic.SelectHat(i);
             if (hats[i].HatName == String.Empty)
@@ -115,6 +115,7 @@ public class ShopState : FactoryState
         }
         else if (SaveManager.Instance.saveData.Fish >= hats[i].HatPrice)
         {
+            sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.purchaseSound);
             SaveManager.Instance.saveData.Fish -= hats[i].HatPrice;
             SaveManager.Instance.saveData.UnlockedHats[i] = 1;
             SaveManager.Instance.saveData.CurrentHat = i;
@@ -133,6 +134,7 @@ public class ShopState : FactoryState
         }
         else
         {
+            sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.noMoneySound);
             buyStatus.color = Color.red;
             buyStatus.text = "Not Enough Fish";
             Invoke("HideBuyStatus", 2f);

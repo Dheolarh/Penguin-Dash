@@ -20,6 +20,7 @@ public class Fish : MonoBehaviour
 
     private void PickUpFish()
     {
+        sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.pickupSound);
         anims?.SetTrigger("Pickup");
         GameStats.Instance.CollectFish();
     }

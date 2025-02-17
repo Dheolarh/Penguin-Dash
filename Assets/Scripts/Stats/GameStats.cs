@@ -23,7 +23,6 @@ public class GameStats : MonoBehaviour
 
     //Score
     public int currentScore;
-    public int highscore;
     private float distanceModifier = 1.5F;
 
     //Fish
@@ -66,10 +65,10 @@ public class GameStats : MonoBehaviour
         {
             alertChecker = true;
             SaveManager.Instance.saveData.HighScore = currentScore;
-            SaveManager.Instance.Save();
             if (!hasNotified)
             {
                 highScoreBoard.SetActive(true);
+                sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.highScoreSound);
                 hasNotified = true;
             }
         }
@@ -107,7 +106,6 @@ public class GameStats : MonoBehaviour
     {
         currentScore = 0;
         currentCollectedFish = 0;
-        
         OnFishCollected?.Invoke(currentCollectedFish);
         OnScoreChange?.Invoke(currentScore);
     }

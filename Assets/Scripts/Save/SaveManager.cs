@@ -8,7 +8,7 @@ public class SaveManager: MonoBehaviour
     public static SaveManager Instance { get {return instance; }}
     private static SaveManager instance;
 
-    private const string SaveFile = ".sav";
+    private const string SaveFile = "data.osx";
     public SaveState saveData;
     private BinaryFormatter formatter;
 

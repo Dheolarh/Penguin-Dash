@@ -17,6 +17,7 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
     private float deathTime;
     private float counter = 3f;
 
+
     private void Start()
     {
     }
@@ -24,7 +25,6 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
     public override void EnterState()
     {
         GameManager.Instance.GetComponent<GameStart>().GameplayCanvas.SetActive(false);
-        GameStats.Instance.totalCollectedFish += GameStats.Instance.currentCollectedFish;
         if (GameStats.Instance.currentScore > SaveManager.Instance.saveData.HighScore)
         {
             SaveManager.Instance.saveData.HighScore = GameStats.Instance.currentScore;
@@ -36,12 +36,17 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
             highScoreText.color = Color.white;
         }
         PostDeathCanvas.SetActive(true);
-        if(!GameManager.Instance.revived) countdownCircle.gameObject.SetActive(true);
-        deathTime = Time.time;
-        reviveCountDown = Time.time + counter;
-        highScoreText.text = $"Highscore: {SaveManager.Instance.saveData.HighScore:D7}";
         fishCountText.text = GameStats.Instance.FishToText();
+        highScoreText.text = $"Highscore: {SaveManager.Instance.saveData.HighScore:D7}";
         scoreText.text = GameStats.Instance.CurrentScoreToText();
+        if (!GameManager.Instance.revived)
+        {
+            countdownCircle.gameObject.SetActive(true);
+            deathTime = Time.time;
+            reviveCountDown = Time.time + counter;
+        }
+
+
     }
 
     public override void UpdateState()
@@ -55,7 +60,6 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
             {
                 PostDeathCanvas.SetActive(false);
                 _movement.ResetGame();
-                SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
                 Invoke("InitializeGame", .1f);
             }
         }
@@ -68,14 +72,13 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
 
     public void GoToMenu()
     {
+        sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.buttonClickSound);
         PostDeathCanvas.SetActive(false);
         _movement.ResetGame();
         Invoke("InitializeGame", .1f);
 
         if (GameStats.Instance.currentScore > SaveManager.Instance.saveData.HighScore)
             SaveManager.Instance.saveData.HighScore = GameStats.Instance.currentScore;
-
-        SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
 
         SaveManager.Instance.Save();
     }
@@ -90,6 +93,8 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
 
     public void TryRevive()
     {
+        if (!AudioManager.Instance.gameSounds.loop) AudioManager.Instance.gameSounds.loop = true;
+        sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.buttonClickSound);
         Debug.Log("Trying to revive.... Showing ad");
         Admanager.Instance.ShowRewardedAd();
     }
@@ -99,9 +104,13 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
         GameManager.Instance.ChangeFlow(GameManager.Instance.GetComponent<InitializeGame>());
     }
 
+    private void VolumeControl()
+    {
+        AudioManager.Instance.IncreaseVolume();
+    }
+
     public override void ExitState()
     {
-        SaveManager.Instance.Save();
         PostDeathCanvas.SetActive(false);
     }
 
@@ -145,6 +154,8 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
             {
                 case UnityAdsShowCompletionState.SKIPPED:
                     Debug.Log("Ad was skipped");
+                    sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.reviveSound);
+                    Invoke("VolumeControl", 1f);
                     Revive();
                     break;
                 case UnityAdsShowCompletionState.UNKNOWN:
@@ -153,6 +164,8 @@ public class GameResetState : BaseState, IUnityAdsInitializationListener, IUnity
                     break;
                 case UnityAdsShowCompletionState.COMPLETED:
                     Debug.Log("Ad was completed");
+                    sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.reviveSound);
+                    Invoke("VolumeControl", 1f);
                     Revive();
                     break;
             }

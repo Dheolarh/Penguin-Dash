@@ -8,7 +8,20 @@ public class DeathState : BaseState
     [SerializeField] private Vector3 knockbackForce = new Vector3(0, 4, -3);
     private Vector3 currentKnockback;
     public override void EnterState()
-    { 
+    {
+        if (SaveManager.Instance.saveData.Debugger)
+        {
+            GameStats.Instance.totalCollectedFish = GameStats.Instance.currentCollectedFish;
+            SaveManager.Instance.saveData.Fish = GameStats.Instance.totalCollectedFish;
+            SaveManager.Instance.saveData.Debugger = false;
+        }
+        else
+        {
+            Debug.Log($"Total: {GameStats.Instance.totalCollectedFish}");
+            Debug.Log($"Current: {GameStats.Instance.currentCollectedFish}");
+            GameStats.Instance.totalCollectedFish = GameStats.Instance.currentCollectedFish;
+            SaveManager.Instance.saveData.Fish += GameStats.Instance.totalCollectedFish;
+        }
         _movement.deathDebug = false;
        _movement.animator?.SetTrigger("Death");
        currentKnockback = knockbackForce;

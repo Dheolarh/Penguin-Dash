@@ -8,7 +8,6 @@ public class RunningState : BaseState
     public override void EnterState()
     {
         _movement.jumpCount = 0;
-        
         _movement.animator?.SetTrigger("Running");
         _movement.verticalVelocity = 0;
     }

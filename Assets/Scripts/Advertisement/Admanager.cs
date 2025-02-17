@@ -48,7 +48,7 @@ public class Admanager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
             Debug.Log("Ad Loaded: " + placementId);
             gameResetState.StopCountdown();
             Debug.Log("Stopped Countdown");
-            Advertisement.Show(placementId, this); // Ensure the listener is passed here
+            Advertisement.Show(placementId, this);
         }
     }
 

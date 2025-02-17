@@ -12,6 +12,11 @@ public class GameStart : FactoryState
     private int counter = 3;
     public override void EnterFlow()
     {
+        sfxAudioManager.Instance.sfxSound.volume = 0.5f;
+        AudioManager.Instance.gameSounds.Stop();
+        AudioManager.Instance.gameSounds.clip = AudioManager.Instance.ingameSound;
+        AudioManager.Instance.gameSounds.volume = 0.75f;
+        AudioManager.Instance.gameSounds.Play();
         if (GameManager.Instance.startGame.isPaused == true)
         {
             GameManager.Instance.startGame.ResumeGame();
@@ -37,7 +42,6 @@ public class GameStart : FactoryState
     public override void UpdateFlow()
     {
         GameManager.Instance.worldManager.ScanPosition();
-
         if (GameManager.Instance.TutorialCanvas.activeSelf == true)
         {
             GameplayCanvas.SetActive(false);
@@ -66,8 +70,8 @@ public class GameStart : FactoryState
         {
             GameplayCanvas.SetActive(true);
         }
-        GameManager.Instance.startGame.ResumeGame();
         SaveManager.Instance.saveData.FirstTime = false;
+        GameManager.Instance.startGame.ResumeGame();
     }
 
     public override void FixedUpdateFlow()
@@ -77,6 +81,7 @@ public class GameStart : FactoryState
 
     public override void ExitFlow()
     {
+        sfxAudioManager.Instance.sfxSound.volume = 1f;
         GameplayCanvas.SetActive(false);
         GameStats.Instance.OnFishCollected -= CollectedFish;
         GameStats.Instance.OnScoreChange -= Score;

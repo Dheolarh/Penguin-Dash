@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = 16f;
     public float maxVelocity = 20.0f;
     public float baseRunSpeed = 10.0f;
+    private int speedChanger = 0;
     public float baseSidewaySpeed = 10.0f;
     public int jumpCount;
     public int slideCount;
@@ -80,6 +81,13 @@ public class PlayerMovement : MonoBehaviour
             controller.height = 1;
             controller.center = new Vector3(0, 0.5f, 0);
         }
+
+        if (GameStats.Instance.currentScore - speedChanger == 1000)
+        {
+            speedChanger = GameStats.Instance.currentScore;
+            baseRunSpeed += 2.0f;
+        }
+        
     }
     
     public float SnapToLane()
@@ -141,8 +149,16 @@ public class PlayerMovement : MonoBehaviour
         string hitLayerName = LayerMask.LayerToName(hit.gameObject.layer);
         if (hitLayerName == "Death" && deathDebug == true)
         {
+            AudioManager.Instance.gameSounds.volume = 0.2f;
+            sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.crashSound);
+            Invoke("GameOverSound", 1f);
             ChangeState(GetComponent<DeathState>());
         }
+    }
+
+    void GameOverSound()
+    {
+        sfxAudioManager.Instance.sfxSound.PlayOneShot(sfxAudioManager.Instance.deathSound);
     }
     
     private void OnDisable()
